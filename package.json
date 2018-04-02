@@ -7,8 +7,10 @@
     "bootstrap": "^4.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
-    "reactstrap": "^5.0.0-beta.3"
+    "reactstrap": "^5.0.0-beta.3",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,5 +18,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:5000"
 }
