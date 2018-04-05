@@ -7,16 +7,18 @@ const google = window.google;
 class ContactPage extends React.Component {
 
     componentDidMount() {
-        var uluru = { lat: 41.729716, lng: -88.125040 };
-        let map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
-            center: uluru
-        });
-        // eslint-disable-next-line
-        let marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
+        setTimeout(() => {
+            var uluru = { lat: 41.729716, lng: -88.125040 };
+            let map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: uluru
+            });
+            // eslint-disable-next-line
+            let marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }, 100);
     }
 
     render() {
