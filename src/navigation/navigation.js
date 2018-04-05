@@ -3,30 +3,71 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  // NavbarBrand,
   Nav,
   NavItem,
   Button,
 } from 'reactstrap';
-import "./navigation.css"
+import "./Navigation.css";
+import { connect } from 'react-redux';
+import LandingPage from "../LandingPage/LandingPage";
+import PricingPage from "../PricingPage/PricingPage";
+import OrderPage from '../OrderPage/OrderPage';
+import AboutPage from "../AboutPage/AboutPage";
+import ContactPage from "../ContactPage/ContactPage";
 
-export default class Navigation extends React.Component {
+class Navigation extends React.Component {
   constructor(props) {
     super(props);
-    this.test = this.test.bind(this);
     this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
+    this.setHomePage = this.setHomePage.bind(this);
+    this.setPricingPage = this.setPricingPage.bind(this);
+    this.setOrderPage = this.setOrderPage.bind(this);
+    this.setAboutPage = this.setAboutPage.bind(this);
+    this.setContactPage = this.setContactPage.bind(this);
   }
+
   toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+    this.props.dispatch({
+      type: "navbarToggle",
+      isOpen: !this.props.navbarReducer.isOpen
+    })
   }
-  test() {
-    debugger
+
+  setHomePage() {
+    this.props.dispatch({
+      type: "setLandingPage",
+      currentPage: <LandingPage />
+    })
   }
+
+  setPricingPage() {
+    this.props.dispatch({
+      type: "setPricingPage",
+      currentPage: <PricingPage />
+    })
+  }
+
+  setOrderPage() {
+    this.props.dispatch({
+      type: "setOrderPage",
+      currentPage: <OrderPage />
+    })
+  }
+
+  setAboutPage() {
+    this.props.dispatch({
+      type: "setAboutPage",
+      currentPage: <AboutPage />
+    })
+  }
+
+  setContactPage() {
+    this.props.dispatch({
+      type: "setContactPage",
+      currentPage: <ContactPage />
+    })
+  }
+
   render() {
     return (
       <div>
@@ -34,22 +75,22 @@ export default class Navigation extends React.Component {
           <Navbar color="faded" light expand="md">
             {/* <NavbarBrand>The Cake Lady</NavbarBrand> */}
             <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
+            <Collapse isOpen={this.props.navbarReducer.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons" onClick={this.test}>Home</Button>
+                  <Button className="navbar-buttons" onClick={this.setHomePage}>Home</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons">Pricing</Button>
+                  <Button className="navbar-buttons" onClick={this.setPricingPage}>Pricing</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons">Order</Button>
+                  <Button className="navbar-buttons" onClick={this.setOrderPage}>Order</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons">About</Button>
+                  <Button className="navbar-buttons" onClick={this.setAboutPage}>About</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons">Contact</Button>
+                  <Button className="navbar-buttons" onClick={this.setContactPage}>Contact</Button>
                 </NavItem>
                 {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -76,3 +117,5 @@ export default class Navigation extends React.Component {
     );
   }
 }
+
+export default connect((state) => (state))(Navigation);
