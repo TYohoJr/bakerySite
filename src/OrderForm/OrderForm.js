@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 class OrderForm extends React.Component {
     constructor() {
         super();
-        this.changeUserName = this.changeUserName.bind(this);
+        this.onUsernameChange = this.onUsernameChange.bind(this);
         this.submitOrder = this.submitOrder.bind(this);
     }
 
@@ -21,10 +21,12 @@ class OrderForm extends React.Component {
                 default:
                     alert(`Order sucessfully submitted on ${result.headers.date}`)
             }
+        }).catch((error)=>{
+            console.log(error)
         })
     }
 
-    changeUserName(e) {
+    onUsernameChange(e) {
         this.props.dispatch({
             type: "changeUsername",
             username: e.target.value
@@ -34,7 +36,7 @@ class OrderForm extends React.Component {
     render() {
         return (
             <div>
-                <Input type="text" value={this.props.usernameReducer.username} onChange={this.changeUserName} placeholder="username goes here" />
+                <Input type="text" value={this.props.usernameReducer.username} onChange={this.onUsernameChange} placeholder="username goes here" />
                 <Button onClick={this.createOrder}>Submit Order</Button>
             </div>
         )

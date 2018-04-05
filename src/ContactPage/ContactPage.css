@@ -1,0 +1,24 @@
+.contact-info-container {
+    width:45%;
+    float: left;
+    text-align: center;
+}
+
+.contact-sub-section {
+    margin: 50px;
+}
+
+.social-sprites {
+    width:40px;
+    margin:10px;
+}
+
+.contact-headers {
+    margin-bottom: 20px;
+}
+
+#map {
+    height:80vh;
+    margin-right:80px;
+    margin-top:20px;
+}
