@@ -5,8 +5,16 @@ import { connect } from "react-redux";
 const google = window.google;
 
 class ContactPage extends React.Component {
+    constructor(){
+        super();
+        this.initMap = this.initMap.bind(this);
+    }
 
     componentDidMount() {
+       this.initMap
+    }
+
+    initMap(){
         setTimeout(() => {
             var uluru = { lat: 41.729716, lng: -88.125040 };
             let map = new google.maps.Map(document.getElementById('map'), {
