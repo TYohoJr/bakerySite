@@ -11,7 +11,7 @@ class ContactPage extends React.Component {
     }
 
     componentDidMount() {
-       this.initMap
+       this.initMap()
     }
 
     initMap(){
