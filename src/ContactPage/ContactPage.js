@@ -1,21 +1,31 @@
 import React from "react";
 import "./ContactPage.css";
 import { connect } from "react-redux";
+import axios from 'axios';
 
 const google = window.google;
+var imageLoading = 'Loading map...';
 
 class ContactPage extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.initMap = this.initMap.bind(this);
+        this.test = this.test.bind(this);
     }
 
     componentDidMount() {
-       this.initMap()
+        this.initMap()
     }
 
-    initMap(){
+    test() {
+        axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCH42g2Mfw3Q_s9lZapFZyt5yuXsMY3hes').then((result) => {
+            console.log(result);
+        })
+    }
+
+    initMap() {
         setTimeout(() => {
+            imageLoading = '';
             var uluru = { lat: 41.729716, lng: -88.125040 };
             let map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 12,
@@ -26,7 +36,7 @@ class ContactPage extends React.Component {
                 position: uluru,
                 map: map
             });
-        }, 100);
+        }, 300);
     }
 
     render() {
@@ -52,7 +62,9 @@ class ContactPage extends React.Component {
                         <a href="www.instagram.com" target="_blank" rel="noopener noreferrer"><img className="social-sprites" src={require("../images/instagram.jpg")} alt="instagram" /></a>
                     </div>
                 </div>
+                <button onClick={this.test}>Click Me</button>
                 <div id="map">
+                    {imageLoading}
                 </div>
             </div>
         )
