@@ -1,7 +1,6 @@
 import React from "react";
 import "./ContactPage.css";
 import { connect } from "react-redux";
-import axios from 'axios';
 
 const google = window.google;
 var imageLoading = 'Loading map...';
@@ -10,17 +9,10 @@ class ContactPage extends React.Component {
     constructor() {
         super();
         this.initMap = this.initMap.bind(this);
-        this.test = this.test.bind(this);
     }
 
     componentDidMount() {
         this.initMap()
-    }
-
-    test() {
-        axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyCH42g2Mfw3Q_s9lZapFZyt5yuXsMY3hes').then((result) => {
-            console.log(result);
-        })
     }
 
     initMap() {
@@ -62,7 +54,6 @@ class ContactPage extends React.Component {
                         <a href="www.instagram.com" target="_blank" rel="noopener noreferrer"><img className="social-sprites" src={require("../images/instagram.jpg")} alt="instagram" /></a>
                     </div>
                 </div>
-                <button onClick={this.test}>Click Me</button>
                 <div id="map">
                     {imageLoading}
                 </div>
