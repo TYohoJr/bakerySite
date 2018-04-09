@@ -38,6 +38,64 @@ const usernameReducer = (state, action) => {
     }
 }
 
+const pricingFormReducer = (state, action) => {
+    if (!state) {
+        state = {
+            firstLayerPrice: '',
+            secondLayerPrice: '',
+            thirdLayerPrice: '',
+            fourthLayerPrice: '',
+            eventType: ''
+        }
+    }
+    switch (action.type) {
+        case "changeFirstLayerPrice":
+            return state = {
+                firstLayerPrice: action.firstLayerPrice,
+                secondLayerPrice: state.secondLayerPrice,
+                thirdLayerPrice: state.thirdLayerPrice,
+                fourthLayerPrice: state.fourthLayerPrice,
+                eventType: state.eventType
+            }
+        case "changeSecondLayerPrice":
+            return state = {
+                firstLayerPrice: state.firstLayerPrice,
+                secondLayerPrice: action.secondLayerPrice,
+                thirdLayerPrice: state.thirdLayerPrice,
+                fourthLayerPrice: state.fourthLayerPrice,
+                eventType: state.eventType
+            }
+        case "changeThirdLayerPrice":
+            return state = {
+                firstLayerPrice: state.firstLayerPrice,
+                secondLayerPrice: state.secondLayerPrice,
+                thirdLayerPrice: action.thirdLayerPrice,
+                fourthLayerPrice: state.fourthLayerPrice,
+                eventType: state.eventType
+            }
+        case "changeFourthLayerPrice":
+            return state = {
+                firstLayerPrice: state.firstLayerPrice,
+                secondLayerPrice: state.secondLayerPrice,
+                thirdLayerPrice: state.thirdLayerPrice,
+                fourthLayerPrice: action.fourthLayerPrice,
+                eventType: state.eventType
+            }
+        case "eventChange":
+            return state = {
+                firstLayerPrice: state.firstLayerPrice,
+                secondLayerPrice: state.secondLayerPrice,
+                thirdLayerPrice: state.thirdLayerPrice,
+                fourthLayerPrice: state.fourthLayerPrice,
+                eventType: action.eventType
+            }
+        default:
+            return {
+                ...state
+            }
+    }
+}
+
 const navbarReducer = (state, action) => {
     if (!state) {
         state = {
@@ -94,5 +152,6 @@ export default combineReducers({
     activePageReducer: activePageReducer,
     usernameReducer: usernameReducer,
     navbarReducer: navbarReducer,
-    setPageReducer: setPageReducer
+    setPageReducer: setPageReducer,
+    pricingFormReducer: pricingFormReducer
 });

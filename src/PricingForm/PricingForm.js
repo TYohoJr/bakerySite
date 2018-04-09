@@ -1,33 +1,22 @@
 import React from "react";
-import "./OrderForm.css";
-import axios from "axios";
+import "./PricingForm.css";
 import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import ServingsModal from "../ServingsModal/ServingsModal";
 
-class OrderForm extends React.Component {
+class PricingForm extends React.Component {
     constructor() {
         super();
         this.onEmailChange = this.onEmailChange.bind(this);
-        this.submitOrder = this.submitOrder.bind(this);
+        this.calculateTotal = this.calculateTotal.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
         this.state = {
             text:""
         }
     }
 
-    submitOrder() {
-        axios.post("submitOrder", { username: this.props.usernameReducer.username }).then((result) => {
-            console.log(result)
-            switch (result.data.code) {
-                case "23505":
-                    alert(`Error: Username already exists`)
-                    break;
-                default:
-                    alert(`Order sucessfully submitted on ${result.headers.date}`)
-            }
-        }).catch((error) => {
-            console.log(error)
-        })
+    calculateTotal() {
+    
     }
 
     onEmailChange(e) {
@@ -48,8 +37,8 @@ class OrderForm extends React.Component {
             <div>
                 <Form>
                     <FormGroup>
-                        <Label for="name">Name</Label>
-                        <Input type="text" name="name" id="name" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="John Smith" />
+                        <Label for="servings">Total Servings</Label> <ServingsModal/>
+                        <Input type="number" name="servings" id="servings" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="Total Servings Needed" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleEmail">Email</Label>
@@ -142,4 +131,4 @@ class OrderForm extends React.Component {
     }
 }
 
-export default connect((state) => (state))(OrderForm);
+export default connect((state) => (state))(PricingForm);

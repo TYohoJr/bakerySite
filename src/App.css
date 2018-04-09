@@ -5,3 +5,7 @@
 body {
   background-color: rgba(255, 192, 203, 0.568);
 }
+
+.navigation-component {
+  margin-bottom: 40px;
+}

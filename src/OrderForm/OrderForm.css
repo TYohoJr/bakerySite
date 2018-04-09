@@ -1,0 +1,8 @@
+form {
+    width:40%;
+    height: 100vh;
+    overflow: scroll;
+    margin-left: 80px;
+    float: left;
+    text-align: left;
+}

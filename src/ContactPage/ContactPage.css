@@ -21,4 +21,14 @@
     height:80vh;
     margin-right:80px;
     margin-top:20px;
+    margin-bottom: 80px;
+}
+
+.map-form {
+    /* width:45%; */
+    text-align: center
+}
+
+.start-input {
+    margin: 20px;
 }

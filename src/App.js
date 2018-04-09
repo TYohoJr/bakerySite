@@ -13,10 +13,14 @@ export default class App extends Component {
   render() {
     return (
       <Provider store={store} >
-        <div className="App">
-          <Navigation />
-          <CurrentPage />
-        </div>
+          <div className="App">
+            <div className="navigation-component">
+              <Navigation />
+            </div>
+            <div className="currentpage-component">
+              <CurrentPage />
+            </div>
+          </div>
       </Provider>
     );
   }
