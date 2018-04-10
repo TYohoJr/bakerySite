@@ -4,152 +4,82 @@ import "./ImageCarousel.css";
 
 const items = [
     {
-        src: require('../images/cake1.jpg'),
+        src: require('../cake-images-top/baby.jpg'),
         altText: 'Slide 1',
         caption: 'Butterfly'
     },
     {
-        src: require('../images/cake2.jpg'),
+        src: require('../cake-images-top/jedi.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake3.jpg'),
+        src: require('../cake-images-top/lego.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake4.jpg'),
+        src: require('../cake-images-top/bulldog.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake5.jpg'),
+        src: require('../cake-images-top/jesus.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake6.jpg'),
+        src: require('../cake-images-top/sand-castle.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake7.jpg'),
+        src: require('../cake-images/chocolate-frosting.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake8.jpg'),
+        src: require('../cake-images/cupcakes1.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake9.jpg'),
+        src: require('../cake-images/fairy-castle.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake10.jpg'),
+        src: require('../cake-images/graduation-golf.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake11.jpg'),
+        src: require('../cake-images/overflow-chocolate.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake12.jpg'),
+        src: require('../cake-images/pink-pig.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake13.jpg'),
+        src: require('../cake-images/pokemon.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake14.jpg'),
+        src: require('../cake-images/superhero.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake15.jpg'),
+        src: require('../cake-images/treasure-chest.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     },
     {
-        src: require('../images/cake16.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake17.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake18.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake19.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake20.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake21.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake22.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake23.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake24.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake25.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake26.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake27.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake28.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake29.jpg'),
-        altText: 'Slide 1',
-        caption: 'Slide 1'
-    },
-    {
-        src: require('../images/cake30.jpg'),
+        src: require('../cake-images/wedding2.jpg'),
         altText: 'Slide 1',
         caption: 'Slide 1'
     }

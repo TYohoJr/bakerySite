@@ -9,3 +9,7 @@ body {
 .navigation-component {
   margin-bottom: 40px;
 }
+
+img {
+  margin: 10px;
+}
