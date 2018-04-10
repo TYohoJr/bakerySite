@@ -1,0 +1,34 @@
+#business-hours {
+
+}
+
+#header-div {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.header-parts {
+    float: left;
+    margin-right: 5%;
+}
+
+#header-title {
+
+}
+
+#header-address {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#header-hours {
+    margin-top: 20px;
+}
+
+.header-hours-lines {
+    margin-bottom: 7px;
+}
+
+#header-hours-title {
+    text-align: center;
+}

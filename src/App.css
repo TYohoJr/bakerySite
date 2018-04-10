@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 body {
@@ -12,4 +14,37 @@ body {
 
 img {
   margin: 10px;
+  transition: -webkit-transform 0.25s ease;
+  transition: transform 0s ease;
+}
+
+img:active {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+#app-header {
+  /* background-color: blue */
+}
+
+#header-component {
+  margin-top: 50px;
+}
+
+footer {
+  text-align: center;
+  transform: scale(.75);
+  height:20px;
+}
+
+.footer-parts {
+
+}
+
+#footer-details {
+
+}
+
+#footer-social {
+
 }

@@ -1,6 +1,6 @@
 .contact-info-container {
-    width:45%;
-    float: left;
+    /* width:45%; */
+    /* float: left; */
     text-align: center;
 }
 
@@ -18,14 +18,14 @@
 }
 
 #map {
-    height:80vh;
+    height:300px;
+    width: 300px;
     margin-right:80px;
     margin-top:20px;
     margin-bottom: 80px;
 }
 
 .map-form {
-    /* width:45%; */
     text-align: center
 }
 

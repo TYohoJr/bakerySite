@@ -1,0 +1,28 @@
+#business-hours {
+    float: left;
+    margin-left: 20%;
+}
+
+#directions {
+    float: right;
+    margin-right: 20%;
+}
+
+#map {
+    /* height:80vh;
+    margin-right:80px;
+    margin-top:20px;
+    margin-bottom: 80px; */
+    margin-left: 80px;
+}
+
+#landing-page-div {
+    float: left;
+    margin-left: 100px;
+}
+
+.landing-page-pic {
+    max-height:180px;
+    width:130px;
+    margin:20px;
+}

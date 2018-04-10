@@ -17,6 +17,7 @@ class PricingForm extends React.Component {
         this.pickFlavor = this.pickFlavor.bind(this);
         this.pickCardboard = this.pickCardboard.bind(this);
         this.pickPlastic = this.pickPlastic.bind(this);
+        this.resetTotal = this.resetTotal.bind(this);
         this.state = {
             newForm: '',
             exampleImage: ''
@@ -165,15 +166,13 @@ class PricingForm extends React.Component {
                             exampleImage: <div>
                                 <h3>Examples of 3D/Complex Fondant Cake</h3>
                                 <img src={require("../cake-images-top/jedi.jpg")} alt="example cake" />
-                                <br/>
+                                <br />
                                 <img src={require("../cake-images/graduation-golf.jpg")} alt="example cake" />
                             </div>
                         })
                         break;
                     default:
                 }
-
-
                 break;
             case "frosting":
                 switch (e.target.value) {
@@ -235,6 +234,15 @@ class PricingForm extends React.Component {
         this.props.dispatch({
             type: 'setPlates',
             plates: "plastic"
+        })
+    }
+
+    resetTotal() {
+        this.props.dispatch({
+            type: 'resetTotal'
+        })
+        this.setState({
+            exampleImage:''
         })
     }
 
@@ -307,6 +315,7 @@ class PricingForm extends React.Component {
                         </FormGroup>
                     </FormGroup>
                     <Button color="success" onClick={this.calculateTotal}>Estimate Total</Button>
+                    <Button color="danger" onClick={this.resetTotal} id="pricing-reset-btn" type="reset">Reset</Button>
                     <p>Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
 
                 </Form>

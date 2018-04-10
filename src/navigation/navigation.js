@@ -89,9 +89,9 @@ class Navigation extends React.Component {
                 <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setAboutPage}>About</Button>
                 </NavItem>
-                <NavItem className="navbar-navitem">
+                {/* <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setContactPage}>Contact</Button>
-                </NavItem>
+                </NavItem> */}
                 {/* <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options

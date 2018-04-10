@@ -76,6 +76,13 @@ const layerSizeReducer = (state, action) => {
                 thirdLayerSize: state.thirdLayerSize,
                 fourthLayerSize: action.fourthLayerSize,
             }
+        case "resetTotal":
+            return state = {
+                firstLayerSize: 4,
+                secondLayerSize: null,
+                thirdLayerSize: null,
+                fourthLayerSize: null,
+            }
         default:
             return {
                 ...state
@@ -146,6 +153,10 @@ const cakeSizeReducer = (state, action) => {
             return state = {
                 totalCakeSize: action.totalCakeSize
             }
+        case "resetTotal":
+            return state = {
+                totalCakeSize: ''
+            }
         default:
             return {
                 ...state
@@ -204,6 +215,14 @@ const pricingFormReducer = (state, action) => {
                 delivery: state.delivery,
                 plates: action.plates
             }
+        case "resetTotal":
+            return state = {
+                cakeSize: null,
+                flavor: '',
+                frosting: '',
+                delivery: '',
+                plates: ''
+            }
         default:
             return {
                 ...state
@@ -211,21 +230,25 @@ const pricingFormReducer = (state, action) => {
     }
 }
 
-const calculateEstimateReducer = (state, action) =>{
-    if(!state){
+const calculateEstimateReducer = (state, action) => {
+    if (!state) {
         state = {
             estimateTotal: null
         }
     }
-    switch(action.type){
+    switch (action.type) {
         case "calculateEstimateTotal":
             return state = {
                 estimateTotal: action.estimateTotal
             }
+        case "resetTotal":
+            return state = {
+                estimateTotal: null
+            }
         default:
-        return {
-            ...state
-        }
+            return {
+                ...state
+            }
     }
 }
 
