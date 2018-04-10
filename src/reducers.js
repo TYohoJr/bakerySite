@@ -38,56 +38,43 @@ const usernameReducer = (state, action) => {
     }
 }
 
-const pricingFormReducer = (state, action) => {
+const layerSizeReducer = (state, action) => {
     if (!state) {
         state = {
-            firstLayerPrice: '',
-            secondLayerPrice: '',
-            thirdLayerPrice: '',
-            fourthLayerPrice: '',
-            eventType: ''
+            firstLayerSize: 4,
+            secondLayerSize: null,
+            thirdLayerSize: null,
+            fourthLayerSize: null,
         }
     }
     switch (action.type) {
-        case "changeFirstLayerPrice":
+        case "changeFirstLayerSize":
             return state = {
-                firstLayerPrice: action.firstLayerPrice,
-                secondLayerPrice: state.secondLayerPrice,
-                thirdLayerPrice: state.thirdLayerPrice,
-                fourthLayerPrice: state.fourthLayerPrice,
-                eventType: state.eventType
+                firstLayerSize: action.firstLayerSize,
+                secondLayerSize: state.secondLayerSize,
+                thirdLayerSize: state.thirdLayerSize,
+                fourthLayerSize: state.fourthLayerSize,
             }
-        case "changeSecondLayerPrice":
+        case "changeSecondLayerSize":
             return state = {
-                firstLayerPrice: state.firstLayerPrice,
-                secondLayerPrice: action.secondLayerPrice,
-                thirdLayerPrice: state.thirdLayerPrice,
-                fourthLayerPrice: state.fourthLayerPrice,
-                eventType: state.eventType
+                firstLayerSize: state.firstLayerSize,
+                secondLayerSize: action.secondLayerSize,
+                thirdLayerSize: state.thirdLayerSize,
+                fourthLayerSize: state.fourthLayerSize,
             }
-        case "changeThirdLayerPrice":
+        case "changeThirdLayerSize":
             return state = {
-                firstLayerPrice: state.firstLayerPrice,
-                secondLayerPrice: state.secondLayerPrice,
-                thirdLayerPrice: action.thirdLayerPrice,
-                fourthLayerPrice: state.fourthLayerPrice,
-                eventType: state.eventType
+                firstLayerSize: state.firstLayerSize,
+                secondLayerSize: state.secondLayerSize,
+                thirdLayerSize: action.thirdLayerSize,
+                fourthLayerSize: state.fourthLayerSize,
             }
-        case "changeFourthLayerPrice":
+        case "changeFourthLayerSize":
             return state = {
-                firstLayerPrice: state.firstLayerPrice,
-                secondLayerPrice: state.secondLayerPrice,
-                thirdLayerPrice: state.thirdLayerPrice,
-                fourthLayerPrice: action.fourthLayerPrice,
-                eventType: state.eventType
-            }
-        case "eventChange":
-            return state = {
-                firstLayerPrice: state.firstLayerPrice,
-                secondLayerPrice: state.secondLayerPrice,
-                thirdLayerPrice: state.thirdLayerPrice,
-                fourthLayerPrice: state.fourthLayerPrice,
-                eventType: action.eventType
+                firstLayerSize: state.firstLayerSize,
+                secondLayerSize: state.secondLayerSize,
+                thirdLayerSize: state.thirdLayerSize,
+                fourthLayerSize: action.fourthLayerSize,
             }
         default:
             return {
@@ -148,10 +135,107 @@ const setPageReducer = (state, action) => {
     }
 }
 
+const cakeSizeReducer = (state, action) => {
+    if (!state) {
+        state = {
+            totalCakeSize: ''
+        }
+    }
+    switch (action.type) {
+        case "totalCakeSize":
+            return state = {
+                totalCakeSize: action.totalCakeSize
+            }
+        default:
+            return {
+                ...state
+            }
+    }
+}
+
+const pricingFormReducer = (state, action) => {
+    if (!state) {
+        state = {
+            cakeSize: null,
+            flavor: '',
+            frosting: '',
+            delivery: '',
+            plates: ''
+        }
+    }
+    switch (action.type) {
+        case "setCakeSize":
+            return state = {
+                cakeSize: action.cakeSize,
+                flavor: state.flavor,
+                frosting: state.frosting,
+                delivery: state.delivery,
+                plates: state.plates
+            }
+        case "setFlavor":
+            return state = {
+                cakeSize: state.cakeSize,
+                flavor: action.flavor,
+                frosting: state.frosting,
+                delivery: state.delivery,
+                plates: state.plates
+            }
+        case "setFrosting":
+            return state = {
+                cakeSize: state.cakeSize,
+                flavor: state.flavor,
+                frosting: action.frosting,
+                delivery: state.delivery,
+                plates: state.plates
+            }
+        case "setDelivery":
+            return state = {
+                cakeSize: state.cakeSize,
+                flavor: state.flavor,
+                frosting: state.frosting,
+                delivery: action.delivery,
+                plates: state.plates
+            }
+        case "setPlates":
+            return state = {
+                cakeSize: state.cakeSize,
+                flavor: state.flavor,
+                frosting: state.frosting,
+                delivery: state.delivery,
+                plates: action.plates
+            }
+        default:
+            return {
+                ...state
+            }
+    }
+}
+
+const calculateEstimateReducer = (state, action) =>{
+    if(!state){
+        state = {
+            estimateTotal: null
+        }
+    }
+    switch(action.type){
+        case "calculateEstimateTotal":
+            return state = {
+                estimateTotal: action.estimateTotal
+            }
+        default:
+        return {
+            ...state
+        }
+    }
+}
+
 export default combineReducers({
     activePageReducer: activePageReducer,
     usernameReducer: usernameReducer,
     navbarReducer: navbarReducer,
     setPageReducer: setPageReducer,
-    pricingFormReducer: pricingFormReducer
+    layerSizeReducer: layerSizeReducer,
+    cakeSizeReducer: cakeSizeReducer,
+    pricingFormReducer: pricingFormReducer,
+    calculateEstimateReducer: calculateEstimateReducer
 });

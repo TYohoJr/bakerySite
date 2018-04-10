@@ -11,3 +11,7 @@ img:active {
 .total-servings-text {
     float: left;
 }
+
+#size-calculator-btn {
+    margin-bottom: 10px;
+}

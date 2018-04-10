@@ -1,0 +1,13 @@
+#pricing-form {
+    width:40%;
+    height: 100vh;
+    overflow: scroll;
+    margin-left: 80px;
+    text-align: left;
+    float: left;
+}
+
+.example-img {
+    float: right;
+    margin: 80px;
+}

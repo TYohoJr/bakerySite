@@ -1,7 +1,7 @@
 import React from "react";
 import "./PricingForm.css";
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ServingsModal from "../ServingsModal/ServingsModal";
 
 class PricingForm extends React.Component {
@@ -9,14 +9,102 @@ class PricingForm extends React.Component {
         super();
         this.onEmailChange = this.onEmailChange.bind(this);
         this.calculateTotal = this.calculateTotal.bind(this);
-        this.onTextChange = this.onTextChange.bind(this);
+        this.pickFrosting = this.pickFrosting.bind(this);
+        this.pickFondant = this.pickFondant.bind(this);
+        this.pickFrostingDetails = this.pickFrostingDetails.bind(this);
+        this.pickDelivery = this.pickDelivery.bind(this);
+        this.pickPickup = this.pickPickup.bind(this);
+        this.pickFlavor = this.pickFlavor.bind(this);
+        this.pickCardboard = this.pickCardboard.bind(this);
+        this.pickPlastic = this.pickPlastic.bind(this);
         this.state = {
-            text:""
+            newForm: '',
+            exampleImage: ''
         }
     }
 
     calculateTotal() {
-    
+        let delivery = null;
+        let flavor = null;
+        let frosting = null;
+        let plates = null;
+        let cakeDetails = this.props.pricingFormReducer
+        switch (cakeDetails.delivery) {
+            case "delivery":
+                delivery = 20
+                break;
+            case "pickup":
+                delivery = 0
+                break;
+            default:
+                delivery = 0
+        }
+        switch (cakeDetails.flavor) {
+            case "Yellow":
+                flavor = 10
+                break;
+            case "Chocolate":
+                flavor = 10
+                break;
+            case "Lemon":
+                flavor = 10
+                break;
+            case "Strawberry":
+                flavor = 10
+                break;
+            case "Red Velvet":
+                flavor = 10
+                break;
+            case "Other":
+                flavor = 10
+                break;
+            default:
+                flavor = 0
+        }
+        switch (cakeDetails.frosting) {
+            case "Buttercream":
+                frosting = 10
+                break;
+            case "Chocolate":
+                frosting = 10
+                break;
+            case "Lemon":
+                frosting = 10
+                break;
+            case "Strawberry":
+                frosting = 10
+                break;
+            case "Red Velvet":
+                frosting = 10
+                break;
+            case "Other":
+                frosting = 10
+                break;
+            case "Simple":
+                frosting = 25
+                break;
+            case "3D/Complex":
+                frosting = 50
+                break;
+            default:
+                frosting = 0
+        }
+        switch (cakeDetails.plates) {
+            case "cardboard":
+                plates = 0
+                break;
+            case "plastic":
+                plates = 10
+                break;
+            default:
+                plates = 0
+        }
+
+        let total = ((this.props.cakeSizeReducer.totalCakeSize * 3) + delivery + flavor + frosting + plates)
+        this.props.dispatch({
+            type: "calculateEstimateTotal",
+            estimateTotal: total
+        })
     }
 
     onEmailChange(e) {
@@ -26,106 +114,192 @@ class PricingForm extends React.Component {
         })
     }
 
-    onTextChange(e) {
+    pickFrosting() {
         this.setState({
-            text:e.target.value
+            newForm: <div>
+                <FormGroup>
+                    <Label for="flavor">Frosting Flavor</Label>
+                    <Input type="select" name="frosting" id="flavor" onChange={this.pickFrostingDetails}>
+                        <option>choose one:</option>
+                        <option>Buttercream</option>
+                        <option>Chocolate</option>
+                        <option>Lemon</option>
+                        <option>Strawberry</option>
+                        <option>Red Velvet</option>
+                        <option>Other</option>
+                    </Input>
+                </FormGroup>
+            </div>
+        })
+    }
+
+    pickFondant() {
+        this.setState({
+            newForm: <div>
+                <FormGroup>
+                    <Label for="flavor">Fondant Type</Label>
+                    <Input type="select" name="fondant" id="flavor" onChange={this.pickFrostingDetails}>
+                        <option>choose one:</option>
+                        <option>Simple</option>
+                        <option>3D/Complex</option>
+                    </Input>
+                </FormGroup>
+            </div>
+        })
+    }
+
+    pickFrostingDetails(e) {
+        switch (e.target.name) {
+            case "fondant":
+                switch (e.target.value) {
+                    case "Simple":
+                        this.setState({
+                            exampleImage: <div>
+                                <h3>Example of Simple Fondant Cake</h3>
+                                <img src={require("../images/placeholder.png")} alt="example cake" />
+                            </div>
+                        })
+                        break;
+                    case "3D/Complex":
+                        this.setState({
+                            exampleImage: <div>
+                                <h3>Example of 3D/Complex Fondant Cake</h3>
+                                <img src={require("../images/placeholder.png")} alt="example cake" />
+                            </div>
+                        })
+                        break;
+                    default:
+                }
+
+
+                break;
+            case "frosting":
+                this.setState({
+                    exampleImage: <div>
+                        <h3>Example of Basic Frosting Cake</h3>
+                        <img src={require("../images/placeholder.png")} alt="example cake" />
+                    </div>
+                })
+                break;
+            default:
+        }
+
+        this.props.dispatch({
+            type: 'setFrosting',
+            frosting: e.target.value
+        })
+    }
+
+    pickDelivery() {
+        this.props.dispatch({
+            type: 'setDelivery',
+            delivery: "delivery"
+        })
+    }
+
+    pickPickup() {
+        this.props.dispatch({
+            type: 'setDelivery',
+            delivery: "pickup"
+        })
+    }
+
+    pickFlavor(e) {
+        this.props.dispatch({
+            type: 'setFlavor',
+            flavor: e.target.value
+        })
+    }
+
+    pickCardboard() {
+        this.props.dispatch({
+            type: 'setPlates',
+            plates: "cardboard"
+        })
+    }
+
+    pickPlastic() {
+        this.props.dispatch({
+            type: 'setPlates',
+            plates: "plastic"
         })
     }
 
     render() {
         return (
             <div>
-                <Form>
+                <Form id="pricing-form">
                     <FormGroup>
-                        <Label for="servings">Total Servings</Label> <ServingsModal/>
-                        <Input type="number" name="servings" id="servings" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="Total Servings Needed" />
+                        <Label for="servings">Total Cake Size (totals inches of all layers)</Label>
+                        <ServingsModal />
+                        <Input disabled type="number" name="servings" id="servings" value={this.props.cakeSizeReducer.totalCakeSize} placeholder="Total Cake Size (use calculator above)" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="exampleEmail">Email</Label>
-                        <Input type="email" name="email" id="exampleEmail" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="example@email.com" />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="number">Phone Number</Label>
-                        <Input type="tel" name="number" id="number" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="555-555-5555" />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="size">Event Size: </Label>{this.props.usernameReducer.username}
-                        <Input type="range" min="1" max="200" name="size" id="size" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="example@email.com" />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="address">Address</Label>
-                        <Input type="text" name="address-street" id="address-street" placeholder="street address" />
-                        <Input type="text" name="address-city" id="address-city" placeholder="city" />
-                        <Input type="text" name="address-state" id="address-state" placeholder="state" />
-                        <Input type="text" name="address-zip" id="address-zip" placeholder="zip code" />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="date">Date Needed</Label>
-                        <Input type="date" name="date" id="date" value={this.props.usernameReducer.username} onChange={this.onEmailChange} placeholder="example@email.com" />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="size">Event Size</Label>
-                        <Input type="select" name="select" id="exampleSelect">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <Label for="flavor">Flavor</Label>
+                        <Input type="select" name="flavor" id="flavor" onChange={this.pickFlavor}>
+                            <option>Select:</option>
+                            <option>Yellow</option>
+                            <option>Chocolate</option>
+                            <option>Lemon</option>
+                            <option>Strawberry</option>
+                            <option>Red Velvet</option>
+                            <option>Other</option>
                         </Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleSelectMulti">Select Multiple</Label>
-                        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleText">Additional Comments:</Label>
-                        <Input type="textarea" maxlength="300" onChange={this.onTextChange}name="text" id="exampleText" />
-                        <small>{this.state.text.length}/300</small>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="exampleFile">File</Label>
-                        <Input type="file" name="file" id="exampleFile" />
-                        <FormText color="muted">
-                            This is some placeholder block-level help text for the above input.
-                            It's a bit lighter and easily wraps to a new line.
-                        </FormText>
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <legend>Radio Buttons</legend>
+                        <Label for="frosting">Frosting/Fondant</Label>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="radio1" />{' '}
-                                Option one is this and that—be sure to include why it's great
+                                <Input type="radio" name="frosting" onChange={this.pickFrosting} />{' '}
+                                Frosting
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="radio1" />{' '}
-                                Option two can be something else and selecting it will deselect option one
+                                <Input type="radio" name="frosting" onChange={this.pickFondant} />{' '}
+                                Fondant
                             </Label>
                         </FormGroup>
-                        <FormGroup check disabled>
+                        {this.state.newForm}
+                    </FormGroup>
+                    <FormGroup tag="fieldset">
+                        <Label for="delivery">Delivery/Pickup (Visit "Contact" page to view map)</Label>
+                        <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="radio1" disabled />{' '}
-                                Option three is disabled
+                                <Input type="radio" name="delivery" value="delivery" onChange={this.pickDelivery} />{' '}
+                                Delivery
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="delivery" value="pickup" onChange={this.pickPickup} />{' '}
+                                Pickup
                             </Label>
                         </FormGroup>
                     </FormGroup>
-                    <FormGroup check>
-                        <Label check>
-                            <Input type="checkbox" />{' '}
-                            Check me out
-                        </Label>
+                    <FormGroup tag="fieldset">
+                        <Label for="plates">Carboard or Plastic Cake Plates</Label>
+                        <p><small>Carboard is free. Plastic costs a deposit that is refunded upon return of the plates</small></p>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="plates" value="cardboard" onChange={this.pickCardboard} />{' '}
+                                Cardboard
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="plates" value="plastic" onChange={this.pickPlastic} />{' '}
+                                Plastic ($10 deposit)
+                            </Label>
+                        </FormGroup>
                     </FormGroup>
-                    <Button>Submit</Button>
+                    <Button color="success" onClick={this.calculateTotal}>Estimate Total</Button>
+                    <p>Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
+
                 </Form>
-                <Button onClick={this.createOrder}>Submit Order</Button>
+                <div className="example-img">
+                    {this.state.exampleImage}
+                </div>
             </div>
         )
     }

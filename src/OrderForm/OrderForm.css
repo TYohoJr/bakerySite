@@ -1,8 +1,17 @@
-form {
+#order-form-person {
     width:40%;
-    height: 100vh;
-    overflow: scroll;
     margin-left: 80px;
     float: left;
     text-align: left;
+}
+
+#order-form-cake {
+    width:40%;
+    margin-right: 80px;
+    float: right;
+    text-align: left;
+}
+
+#submit-order-btns {
+    text-align: center
 }
