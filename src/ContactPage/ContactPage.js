@@ -17,17 +17,18 @@ class ContactPage extends React.Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         var myLatLng = { lat: 41.729716, lng: -88.125040 }
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: myLatLng
         });
+        // eslint-disable-next-line
         var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
             title: 'Hello World!'
-          });
+        });
     }
 
     initMap() {
