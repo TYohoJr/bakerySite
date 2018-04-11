@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import LandingPage from "../LandingPage/LandingPage";
 import PricingPage from "../PricingPage/PricingPage";
 import OrderPage from '../OrderPage/OrderPage';
-import AboutPage from "../AboutPage/AboutPage";
+import ExamplesPage from "../ExamplesPage/ExamplesPage";
 import ContactPage from "../ContactPage/ContactPage";
 
 class Navigation extends React.Component {
@@ -22,7 +22,7 @@ class Navigation extends React.Component {
     this.setHomePage = this.setHomePage.bind(this);
     this.setPricingPage = this.setPricingPage.bind(this);
     this.setOrderPage = this.setOrderPage.bind(this);
-    this.setAboutPage = this.setAboutPage.bind(this);
+    this.setExamplesPage = this.setExamplesPage.bind(this);
     this.setContactPage = this.setContactPage.bind(this);
   }
 
@@ -54,10 +54,10 @@ class Navigation extends React.Component {
     })
   }
 
-  setAboutPage() {
+  setExamplesPage() {
     this.props.dispatch({
-      type: "setAboutPage",
-      currentPage: <AboutPage />
+      type: "setExamplesPage",
+      currentPage: <ExamplesPage />
     })
   }
 
@@ -87,7 +87,7 @@ class Navigation extends React.Component {
                   <Button className="navbar-buttons" onClick={this.setOrderPage}>Order</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons" onClick={this.setAboutPage}>About</Button>
+                  <Button className="navbar-buttons" onClick={this.setExamplesPage}>Gallery</Button>
                 </NavItem>
                 {/* <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setContactPage}>Contact</Button>

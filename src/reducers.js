@@ -127,7 +127,7 @@ const setPageReducer = (state, action) => {
             return state = {
                 currentPage: action.currentPage
             }
-        case "setAboutPage":
+        case "setExamplesPage":
             return state = {
                 currentPage: action.currentPage
             }
