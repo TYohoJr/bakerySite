@@ -21,7 +21,7 @@ export default class CakeModal extends React.Component {
     render() {
         return (
             <div>
-                <Button color="primary" onClick={this.toggle}>Examples</Button>
+                <Button id="cake-modal-btn" color="primary" onClick={this.toggle}>Examples</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalBody>
                         <Table id="cake-modal-table">

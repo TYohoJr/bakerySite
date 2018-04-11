@@ -13,3 +13,15 @@
 #pricing-reset-btn {
     float: right;
 }
+
+.label-float {
+    float: left;
+}
+
+.component-float {
+    float: left;
+}
+
+#estimate-btn {
+    margin-right: 10px;
+}

@@ -2,10 +2,10 @@
     height:150px;
 }
 
-/* .modal {
-
-} */
-
 #cake-modal-table {
     text-align: center;
+}
+
+#cake-modal-btn {
+    margin-left: 10px;
 }

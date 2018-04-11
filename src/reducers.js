@@ -163,7 +163,6 @@ const cakeSizeReducer = (state, action) => {
 const pricingFormReducer = (state, action) => {
     if (!state) {
         state = {
-            cakeSize: null,
             flavor: '',
             frosting: '',
             delivery: '',
@@ -171,17 +170,8 @@ const pricingFormReducer = (state, action) => {
         }
     }
     switch (action.type) {
-        case "setCakeSize":
-            return state = {
-                cakeSize: action.cakeSize,
-                flavor: state.flavor,
-                frosting: state.frosting,
-                delivery: state.delivery,
-                plates: state.plates
-            }
         case "setFlavor":
             return state = {
-                cakeSize: state.cakeSize,
                 flavor: action.flavor,
                 frosting: state.frosting,
                 delivery: state.delivery,
@@ -189,7 +179,6 @@ const pricingFormReducer = (state, action) => {
             }
         case "setFrosting":
             return state = {
-                cakeSize: state.cakeSize,
                 flavor: state.flavor,
                 frosting: action.frosting,
                 delivery: state.delivery,
@@ -197,7 +186,6 @@ const pricingFormReducer = (state, action) => {
             }
         case "setDelivery":
             return state = {
-                cakeSize: state.cakeSize,
                 flavor: state.flavor,
                 frosting: state.frosting,
                 delivery: action.delivery,
@@ -205,7 +193,6 @@ const pricingFormReducer = (state, action) => {
             }
         case "setPlates":
             return state = {
-                cakeSize: state.cakeSize,
                 flavor: state.flavor,
                 frosting: state.frosting,
                 delivery: state.delivery,
@@ -213,7 +200,6 @@ const pricingFormReducer = (state, action) => {
             }
         case "resetTotal":
             return state = {
-                cakeSize: null,
                 flavor: '',
                 frosting: '',
                 delivery: '',

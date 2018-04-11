@@ -40,6 +40,13 @@ class PricingForm extends React.Component {
             })
             return;
         }
+        if (!cakeDetails.delivery || !cakeDetails.flavor || !cakeDetails.frosting || !cakeDetails.plates) {
+            this.props.dispatch({
+                type: "calculateEstimateTotal",
+                estimateTotal: "Please fill out all fields"
+            })
+            return;
+        }
         switch (cakeDetails.delivery) {
             case "delivery":
                 delivery = 20
@@ -110,7 +117,7 @@ class PricingForm extends React.Component {
             default:
                 plates = 0
         }
-        total = ((cakeSize * 6) + (flavor * (cakeSize / 8)) + (frosting * (cakeSize / 8)) + delivery + plates)
+        total = Math.floor((cakeSize * 6) + (flavor * (cakeSize / 8)) + (frosting * (cakeSize / 8)) + delivery + plates)
         this.props.dispatch({
             type: "calculateEstimateTotal",
             estimateTotal: total
@@ -159,52 +166,6 @@ class PricingForm extends React.Component {
     }
 
     pickFrostingDetails(e) {
-        // switch (e.target.name) {
-        //     case "fondant":
-        //         switch (e.target.value) {
-        //             case "Simple":
-        //                 this.setState({
-        //                     exampleImage: <div>
-        //                         <h3>Example of Simple Fondant Cake</h3>
-        //                         <img src={require("../cake-images-top/flowers.jpg")} alt="example cake" />
-        //                     </div>
-        //                 })
-        //                 break;
-        //             case "3D/Complex":
-        //                 this.setState({
-        //                     exampleImage: <div>
-        //                         <h3>Examples of 3D/Complex Fondant Cake</h3>
-        //                         <img src={require("../cake-images-top/jedi.jpg")} alt="example cake" />
-        //                         <br />
-        //                         <img src={require("../cake-images/graduation-golf.jpg")} alt="example cake" />
-        //                     </div>
-        //                 })
-        //                 break;
-        //             default:
-        //         }
-        //         break;
-        //     case "frosting":
-        //         switch (e.target.value) {
-        //             case "Wedding":
-        //                 this.setState({
-        //                     exampleImage: <div>
-        //                         <h3>Example of Wedding Cake</h3>
-        //                         <img src={require("../cake-images-top/wedding1.jpg")} alt="example cake" />
-        //                     </div>
-        //                 })
-        //                 break;
-        //             default:
-        //                 this.setState({
-        //                     exampleImage: <div>
-        //                         <h3>Example of Basic Frosting Cake</h3>
-        //                         <img src={require("../cake-images/chocolate-frosting.jpg")} alt="example cake" />
-        //                     </div>
-        //                 })
-        //         }
-        //         break;
-        //     default:
-        // }
-
         this.props.dispatch({
             type: 'setFrosting',
             frosting: e.target.value
@@ -250,9 +211,6 @@ class PricingForm extends React.Component {
         this.props.dispatch({
             type: 'resetTotal'
         })
-        this.setState({
-            exampleImage: ''
-        })
     }
 
     render() {
@@ -260,7 +218,7 @@ class PricingForm extends React.Component {
             <div>
                 <Form id="pricing-form">
                     <FormGroup>
-                        <Label for="servings">Total Cake Size (totals inches of all layers)</Label>
+                        <Label className="label-float" for="servings">Total Cake Size (totals inches of all layers)</Label>
                         <ServingsModal />
                         <Input disabled type="number" name="servings" id="servings" value={this.props.cakeSizeReducer.totalCakeSize} placeholder="Total Cake Size (use calculator above)" />
                     </FormGroup>
@@ -277,7 +235,7 @@ class PricingForm extends React.Component {
                         </Input>
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label for="frosting">Frosting/Fondant</Label>
+                        <Label className="label-float" for="frosting">Frosting/Fondant</Label>
                         <CakeModal />
                         <FormGroup check>
                             <Label check>
@@ -298,13 +256,13 @@ class PricingForm extends React.Component {
                         <p><small>Use the map to calculate distance --></small></p>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="delivery" value="delivery" onChange={this.pickDelivery} />{' '}
+                                <Input type="radio" name="delivery" value="delivery" onClick={this.pickDelivery} />{' '}
                                 Delivery
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="delivery" value="pickup" onChange={this.pickPickup} />{' '}
+                                <Input type="radio" name="delivery" value="pickup" onClick={this.pickPickup} />{' '}
                                 Pickup
                             </Label>
                         </FormGroup>
@@ -314,20 +272,20 @@ class PricingForm extends React.Component {
                         <p><small>Carboard is free. Plastic costs a deposit that is refunded upon return of the plates</small></p>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="plates" value="cardboard" onChange={this.pickCardboard} />{' '}
+                                <Input type="radio" name="plates" value="cardboard" onClick={this.pickCardboard} />{' '}
                                 Cardboard
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="plates" value="plastic" onChange={this.pickPlastic} />{' '}
+                                <Input type="radio" name="plates" value="plastic" onClick={this.pickPlastic} />{' '}
                                 Plastic ($10 deposit)
                             </Label>
                         </FormGroup>
                     </FormGroup>
-                    <Button color="success" onClick={this.calculateTotal}>Estimate Total</Button>
+                    <Button id="estimate-btn" className="component-float" color="success" onClick={this.calculateTotal}>Estimate Total</Button>
                     <Button color="danger" onClick={this.resetTotal} id="pricing-reset-btn" type="reset">Reset</Button>
-                    <p>Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
+                    <p className="label-float">Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
 
                 </Form>
                 {/* <div className="example-img">
