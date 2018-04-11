@@ -1,12 +1,21 @@
 .map-form {
-    text-align: center
+    text-align: center;
 }
 
 .start-input {
     margin: 20px;
 }
 
-#directions-div {
+/* #directions-div {
+
+} */
+
+#panel {
+    float: left;
+    width:20%;
+    margin-left: 5%;
+}
+
+#map-form-and-map {
     float: right;
-    margin-right: 15%;
 }

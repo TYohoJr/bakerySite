@@ -3,6 +3,7 @@ import "./PricingForm.css";
 import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ServingsModal from "../ServingsModal/ServingsModal";
+import CakeModal from "../CakeModal/CakeModal";
 
 class PricingForm extends React.Component {
     constructor() {
@@ -158,51 +159,51 @@ class PricingForm extends React.Component {
     }
 
     pickFrostingDetails(e) {
-        switch (e.target.name) {
-            case "fondant":
-                switch (e.target.value) {
-                    case "Simple":
-                        this.setState({
-                            exampleImage: <div>
-                                <h3>Example of Simple Fondant Cake</h3>
-                                <img src={require("../cake-images-top/flowers.jpg")} alt="example cake" />
-                            </div>
-                        })
-                        break;
-                    case "3D/Complex":
-                        this.setState({
-                            exampleImage: <div>
-                                <h3>Examples of 3D/Complex Fondant Cake</h3>
-                                <img src={require("../cake-images-top/jedi.jpg")} alt="example cake" />
-                                <br />
-                                <img src={require("../cake-images/graduation-golf.jpg")} alt="example cake" />
-                            </div>
-                        })
-                        break;
-                    default:
-                }
-                break;
-            case "frosting":
-                switch (e.target.value) {
-                    case "Wedding":
-                        this.setState({
-                            exampleImage: <div>
-                                <h3>Example of Wedding Cake</h3>
-                                <img src={require("../cake-images-top/wedding1.jpg")} alt="example cake" />
-                            </div>
-                        })
-                        break;
-                    default:
-                        this.setState({
-                            exampleImage: <div>
-                                <h3>Example of Basic Frosting Cake</h3>
-                                <img src={require("../cake-images/chocolate-frosting.jpg")} alt="example cake" />
-                            </div>
-                        })
-                }
-                break;
-            default:
-        }
+        // switch (e.target.name) {
+        //     case "fondant":
+        //         switch (e.target.value) {
+        //             case "Simple":
+        //                 this.setState({
+        //                     exampleImage: <div>
+        //                         <h3>Example of Simple Fondant Cake</h3>
+        //                         <img src={require("../cake-images-top/flowers.jpg")} alt="example cake" />
+        //                     </div>
+        //                 })
+        //                 break;
+        //             case "3D/Complex":
+        //                 this.setState({
+        //                     exampleImage: <div>
+        //                         <h3>Examples of 3D/Complex Fondant Cake</h3>
+        //                         <img src={require("../cake-images-top/jedi.jpg")} alt="example cake" />
+        //                         <br />
+        //                         <img src={require("../cake-images/graduation-golf.jpg")} alt="example cake" />
+        //                     </div>
+        //                 })
+        //                 break;
+        //             default:
+        //         }
+        //         break;
+        //     case "frosting":
+        //         switch (e.target.value) {
+        //             case "Wedding":
+        //                 this.setState({
+        //                     exampleImage: <div>
+        //                         <h3>Example of Wedding Cake</h3>
+        //                         <img src={require("../cake-images-top/wedding1.jpg")} alt="example cake" />
+        //                     </div>
+        //                 })
+        //                 break;
+        //             default:
+        //                 this.setState({
+        //                     exampleImage: <div>
+        //                         <h3>Example of Basic Frosting Cake</h3>
+        //                         <img src={require("../cake-images/chocolate-frosting.jpg")} alt="example cake" />
+        //                     </div>
+        //                 })
+        //         }
+        //         break;
+        //     default:
+        // }
 
         this.props.dispatch({
             type: 'setFrosting',
@@ -277,6 +278,7 @@ class PricingForm extends React.Component {
                     </FormGroup>
                     <FormGroup tag="fieldset">
                         <Label for="frosting">Frosting/Fondant</Label>
+                        <CakeModal />
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="frosting" onChange={this.pickFrosting} />{' '}
@@ -328,9 +330,9 @@ class PricingForm extends React.Component {
                     <p>Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
 
                 </Form>
-                <div className="example-img">
+                {/* <div className="example-img">
                     {this.state.exampleImage}
-                </div>
+                </div> */}
             </div>
         )
     }

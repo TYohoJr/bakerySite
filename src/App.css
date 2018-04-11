@@ -23,9 +23,9 @@ img:active {
   transform: scale(2);
 }
 
-#app-header {
-  /* background-color: blue */
-}
+/* #app-header {
+
+} */
 
 #header-component {
   margin-top: 50px;
@@ -35,18 +35,6 @@ footer {
   text-align: center;
   transform: scale(.75);
   height:20px;
-}
-
-.footer-parts {
-
-}
-
-#footer-details {
-
-}
-
-#footer-social {
-
 }
 
 .social-sprites {

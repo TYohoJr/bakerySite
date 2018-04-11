@@ -1,10 +1,8 @@
 #pricing-form {
-    width:40%;
-    height: 100vh;
-    overflow: scroll;
-    margin-left: 80px;
+    margin-left: 25%;
     text-align: left;
     float: left;
+    width:50%;
 }
 
 .example-img {
