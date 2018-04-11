@@ -1,7 +1,7 @@
 import React from "react";
 import "./LandingPage.css";
 import { connect } from 'react-redux';
-import ContactPage from "../ContactPage/ContactPage";
+import Directions from "../Directions/Directions";
 
 class LandingPage extends React.Component {
 
@@ -29,7 +29,7 @@ class LandingPage extends React.Component {
                     </div> */}
                 </div>
                 <div id="directions">
-                    <ContactPage />
+                    <Directions />
                 </div>
             </div>
         )

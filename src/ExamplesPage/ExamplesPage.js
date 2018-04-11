@@ -7,7 +7,7 @@ class Examples extends React.Component {
         return (
             <div>
                 <div>
-                    <h1></h1>
+                    <h1>Gallery</h1>
                 </div>
                 <div>
                     <img className="examples-img" src={require("../cake-images-top/jedi.jpg")} alt="cake" />

@@ -25,11 +25,20 @@ class PricingForm extends React.Component {
     }
 
     calculateTotal() {
+        let total;
         let delivery = null;
         let flavor = null;
         let frosting = null;
         let plates = null;
+        let cakeSize = this.props.cakeSizeReducer.totalCakeSize
         let cakeDetails = this.props.pricingFormReducer
+        if (!cakeSize) {
+            this.props.dispatch({
+                type: "calculateEstimateTotal",
+                estimateTotal: "Please select cake size"
+            })
+            return;
+        }
         switch (cakeDetails.delivery) {
             case "delivery":
                 delivery = 20
@@ -100,8 +109,7 @@ class PricingForm extends React.Component {
             default:
                 plates = 0
         }
-
-        let total = ((this.props.cakeSizeReducer.totalCakeSize * 3) + delivery + flavor + frosting + plates)
+        total = ((cakeSize * 6) + (flavor * (cakeSize / 8)) + (frosting * (cakeSize / 8)) + delivery + plates)
         this.props.dispatch({
             type: "calculateEstimateTotal",
             estimateTotal: total
@@ -242,7 +250,7 @@ class PricingForm extends React.Component {
             type: 'resetTotal'
         })
         this.setState({
-            exampleImage:''
+            exampleImage: ''
         })
     }
 
@@ -284,7 +292,8 @@ class PricingForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label for="delivery">Delivery/Pickup (Visit "Contact" page to view map)</Label>
+                        <Label for="delivery">Delivery/Pickup</Label>
+                        <p><small>Use the map to calculate distance --></small></p>
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="delivery" value="delivery" onChange={this.pickDelivery} />{' '}

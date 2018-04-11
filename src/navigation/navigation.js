@@ -13,7 +13,6 @@ import LandingPage from "../LandingPage/LandingPage";
 import PricingPage from "../PricingPage/PricingPage";
 import OrderPage from '../OrderPage/OrderPage';
 import ExamplesPage from "../ExamplesPage/ExamplesPage";
-import ContactPage from "../ContactPage/ContactPage";
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -23,7 +22,6 @@ class Navigation extends React.Component {
     this.setPricingPage = this.setPricingPage.bind(this);
     this.setOrderPage = this.setOrderPage.bind(this);
     this.setExamplesPage = this.setExamplesPage.bind(this);
-    this.setContactPage = this.setContactPage.bind(this);
   }
 
   toggle() {
@@ -61,19 +59,11 @@ class Navigation extends React.Component {
     })
   }
 
-  setContactPage() {
-    this.props.dispatch({
-      type: "setContactPage",
-      currentPage: <ContactPage />
-    })
-  }
-
   render() {
     return (
       <div>
         <div>
           <Navbar color="faded" light expand="md">
-            {/* <NavbarBrand>The Cake Lady</NavbarBrand> */}
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.props.navbarReducer.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -89,26 +79,6 @@ class Navigation extends React.Component {
                 <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setExamplesPage}>Gallery</Button>
                 </NavItem>
-                {/* <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons" onClick={this.setContactPage}>Contact</Button>
-                </NavItem> */}
-                {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
               </Nav>
             </Collapse>
           </Navbar>

@@ -1,0 +1,12 @@
+.map-form {
+    text-align: center
+}
+
+.start-input {
+    margin: 20px;
+}
+
+#directions-div {
+    float: right;
+    margin-right: 15%;
+}

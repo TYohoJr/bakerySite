@@ -131,10 +131,6 @@ const setPageReducer = (state, action) => {
             return state = {
                 currentPage: action.currentPage
             }
-        case "setContactPage":
-            return state = {
-                currentPage: action.currentPage
-            }
         default:
             return {
                 ...state
