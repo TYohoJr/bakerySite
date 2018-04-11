@@ -1,0 +1,9 @@
+#map-modal-btn {
+    margin-left: 10px;
+}
+
+#map-modal-content {
+    height:700px;
+    overflow: scroll;
+    text-align: center;
+}
