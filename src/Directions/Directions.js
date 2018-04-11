@@ -37,7 +37,6 @@ class Directions extends React.Component {
         var directionsDisplay = new google.maps.DirectionsRenderer({
             panel: document.getElementById("panel")
         });
-
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 7,
             center: { lat: 41.729716, lng: -88.125040 }
