@@ -41,7 +41,9 @@ class Directions extends React.Component {
             zoom: 7,
             center: { lat: 41.729716, lng: -88.125040 }
         });
-        directionsDisplay.setMap(map); this.calculateAndDisplayRoute(directionsService, directionsDisplay);
+        directionsDisplay.setMap(map);
+        this.calculateAndDisplayRoute(directionsService, directionsDisplay);
+
     }
 
     calculateAndDisplayRoute(directionsService, directionsDisplay) {

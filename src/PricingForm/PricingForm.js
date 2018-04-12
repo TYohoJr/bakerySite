@@ -93,12 +93,6 @@ class PricingForm extends React.Component {
             case "Strawberry":
                 frosting = 10
                 break;
-            case "Red Velvet":
-                frosting = 10
-                break;
-            case "Wedding":
-                frosting = 50
-                break;
             case "Simple":
                 frosting = 25
                 break;
@@ -139,11 +133,9 @@ class PricingForm extends React.Component {
                     <Label for="flavor">Frosting Type</Label>
                     <Input type="select" name="frosting" id="flavor" onChange={this.pickFrostingDetails}>
                         <option>choose one:</option>
-                        <option>Wedding</option>
                         <option>Chocolate</option>
                         <option>Lemon</option>
                         <option>Strawberry</option>
-                        <option>Red Velvet</option>
                         <option>Buttercream</option>
                     </Input>
                 </FormGroup>

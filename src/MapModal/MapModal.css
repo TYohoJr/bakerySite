@@ -5,14 +5,12 @@
 #map-modal-content {
     height:700px;
     overflow: scroll;
-    text-align: center;
 }
 
 .adp-directions {
-    background-color: blue;
     margin-left: 100px;
 }
 
 .adp-summary {
-    background-color: brown
+
 }

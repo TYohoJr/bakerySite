@@ -16,3 +16,13 @@
 #map-form-and-map {
     float: right;
 }
+
+.adp-placemark {
+    visibility: hidden!important;
+    position: absolute;
+}
+
+.adp-summary {
+    visibility: hidden!important;
+    position: absolute;
+}
