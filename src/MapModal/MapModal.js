@@ -20,8 +20,14 @@ export default class MapModal extends React.Component {
   }
 
   render() {
+      //This is where i left off on 4-11-18
+      //Trying to get the "summary" text out of the google maps result
+      var test = document.getElementsByClassName("test")
+      console.log(document.getElementsByClassName("adp-summary"))
+      console.log(test)
+      console.log("hello")
     return (
-      <div id="map-modal-div">
+      <div id="map-modal-div" className="test">
         <Button id="map-modal-btn" color="primary" onClick={this.toggle}>Map</Button>
         <Modal id="map-modal-content" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalBody>
