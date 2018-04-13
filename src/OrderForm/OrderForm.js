@@ -6,6 +6,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import PayPal from "../PayPal/PayPal";
 import CakeModal from "../CakeModal/CakeModal";
 import MapModal from "../MapModal/MapModal";
+import LayersGuideModal from "../LayersGuideModal/LayersGuideModal";
 
 class OrderForm extends React.Component {
     constructor() {
@@ -38,13 +39,15 @@ class OrderForm extends React.Component {
     }
 
     createOrder() {
-        console.log(this.props.orderFormReducer);
-        console.log("break");
-        console.log(this.props.orderCakeReducer);
+        axios.post("/createOrder", { order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
+            console.log(result.data);
+        }).catch((error)=>{
+            console.log(error)
+        })
     }
 
     submitOrder() {
-        axios.post("submitOrder", { username: this.props.orderFormReducer.username }).then((result) => {
+        axios.post("/submitOrder", { username: this.props.orderFormReducer.username }).then((result) => {
             console.log(result)
             switch (result.data.code) {
                 case "23505":
@@ -98,7 +101,7 @@ class OrderForm extends React.Component {
             text: e.target.value
         })
         this.props.dispatch({
-            type:"changeText",
+            type: "changeText",
             text: e.target.value
         })
     }
@@ -244,7 +247,8 @@ class OrderForm extends React.Component {
                 </Form>
                 <Form id="order-form-cake">
                     <h2 className="order-header">Cake Info</h2>
-                    <h5>Layer Sizes:</h5>
+                    <h5 className="label-float">Layer Sizes:</h5>
+                    <LayersGuideModal />
                     <FormGroup>
                         <Label for="layerOneSize">Layer 1 Size</Label>
                         <Input type="select" name="layerOneSize" onChange={this.onLayerOneSizeChange}>
