@@ -20,16 +20,126 @@ const activePageReducer = (state, action) => {
     }
 }
 
-const usernameReducer = (state, action) => {
+const orderCakeReducer = (state, action) => {
     if (!state) {
         state = {
-            username: ""
+            layerOneSize: "4",
+            layerTwoSize: '',
+            layerThreeSize: '',
+            layerFourSize: '',
+            frostingFondant: '',
+            flavor: '',
+            delivery: '',
+            plates: '',
+            additonalComments: ''
+        }
+    }
+    switch (action.type) {
+        case "changeLayerOneSize":
+            return state = {
+                ...state,
+                layerOneSize: action.layerOneSize
+            }
+        case "changeLayerTwoSize":
+            return state = {
+                ...state,
+                layerTwoSize: action.layerTwoSize
+            }
+        case "changeLayerThreeSize":
+            return state = {
+                ...state,
+                layerThreeSize: action.layerThreeSize
+            }
+        case "changeLayerFourSize":
+            return state = {
+                ...state,
+                layerFourSize: action.layerFourSize
+            }
+        case "changeFrostingFondant":
+            return state = {
+                ...state,
+                frostingFondant: action.frostingFondant
+            }
+        case "changeFlavor":
+            return state = {
+                ...state,
+                flavor: action.flavor
+            }
+        case "changeDelivery":
+            return state = {
+                ...state,
+                delivery: action.delivery
+            }
+        case "changePlates":
+            return state = {
+                ...state,
+                plates: action.plates
+            }
+        case "changeText":
+            return state = {
+                ...state,
+                additonalComments: action.text
+            }
+        default:
+            return state = {
+                ...state
+            }
+    }
+}
+
+const orderFormReducer = (state, action) => {
+    if (!state) {
+        state = {
+            username: "",
+            addressCity: '',
+            addressState: '',
+            addressStreet: '',
+            addressZip: '',
+            email: '',
+            number: '',
+            dateNeeded: ''
         }
     }
     switch (action.type) {
         case "changeUsername":
             return state = {
-                username: action.username
+                ...state,
+                username: action.username,
+            }
+        case "changeAddressStreet":
+            return state = {
+                ...state,
+                addressStreet: action.addressStreet
+            }
+        case "changeAddressCity":
+            return state = {
+                ...state,
+                addressCity: action.addressCity
+            }
+        case "changeAddressState":
+            return state = {
+                ...state,
+                addressState: action.addressState
+            }
+        case "changeAddressZip":
+            return state = {
+                ...state,
+                addressZip: action.addressZip
+            }
+        case "changeEmail":
+            return state = {
+                ...state,
+                email: action.email
+            }
+        case "changeNumber":
+            return state = {
+                ...state,
+                number: action.number
+            }
+        case "changeDateNeeded":
+            return state = {
+                ...state,
+                dateNeeded: action.dateNeeded
             }
         default:
             return {
@@ -50,30 +160,22 @@ const layerSizeReducer = (state, action) => {
     switch (action.type) {
         case "changeFirstLayerSize":
             return state = {
+                ...state,
                 firstLayerSize: action.firstLayerSize,
-                secondLayerSize: state.secondLayerSize,
-                thirdLayerSize: state.thirdLayerSize,
-                fourthLayerSize: state.fourthLayerSize,
             }
         case "changeSecondLayerSize":
             return state = {
-                firstLayerSize: state.firstLayerSize,
+                ...state,
                 secondLayerSize: action.secondLayerSize,
-                thirdLayerSize: state.thirdLayerSize,
-                fourthLayerSize: state.fourthLayerSize,
             }
         case "changeThirdLayerSize":
             return state = {
-                firstLayerSize: state.firstLayerSize,
-                secondLayerSize: state.secondLayerSize,
+                ...state,
                 thirdLayerSize: action.thirdLayerSize,
-                fourthLayerSize: state.fourthLayerSize,
             }
         case "changeFourthLayerSize":
             return state = {
-                firstLayerSize: state.firstLayerSize,
-                secondLayerSize: state.secondLayerSize,
-                thirdLayerSize: state.thirdLayerSize,
+                ...state,
                 fourthLayerSize: action.fourthLayerSize,
             }
         case "resetTotal":
@@ -236,11 +338,12 @@ const calculateEstimateReducer = (state, action) => {
 
 export default combineReducers({
     activePageReducer: activePageReducer,
-    usernameReducer: usernameReducer,
+    orderFormReducer: orderFormReducer,
     navbarReducer: navbarReducer,
     setPageReducer: setPageReducer,
     layerSizeReducer: layerSizeReducer,
     cakeSizeReducer: cakeSizeReducer,
     pricingFormReducer: pricingFormReducer,
-    calculateEstimateReducer: calculateEstimateReducer
+    calculateEstimateReducer: calculateEstimateReducer,
+    orderCakeReducer: orderCakeReducer
 });

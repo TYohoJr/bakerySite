@@ -247,7 +247,6 @@ class PricingForm extends React.Component {
                     <FormGroup tag="fieldset">
                         <Label className="label-float" for="delivery">Delivery/Pickup</Label>
                         <MapModal />
-                        {/* <p><small>Use the map to calculate distance --></small></p> */}
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="delivery" value="delivery" onClick={this.pickDelivery} />{' '}
@@ -280,11 +279,7 @@ class PricingForm extends React.Component {
                     <Button id="estimate-btn" className="component-float" color="success" onClick={this.calculateTotal}>Estimate Total</Button>
                     <Button color="danger" onClick={this.resetTotal} id="pricing-reset-btn" type="reset">Reset</Button>
                     <p className="label-float">Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
-
                 </Form>
-                {/* <div className="example-img">
-                    {this.state.exampleImage}
-                </div> */}
             </div>
         )
     }
