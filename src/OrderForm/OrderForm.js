@@ -32,16 +32,19 @@ class OrderForm extends React.Component {
         this.onFrostingFondantChange = this.onFrostingFondantChange.bind(this);
         this.onDeliveryChange = this.onDeliveryChange.bind(this);
         this.onPlatesChange = this.onPlatesChange.bind(this);
+        this.orderLookup = this.orderLookup.bind(this);
+        this.onEmailLookupChange = this.onEmailLookupChange.bind(this);
         this.state = {
             text: "",
-            newForm: ''
+            newForm: '',
+            emailLookup:''
         }
     }
 
     createOrder() {
         axios.post("/createOrder", { order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
             console.log(result.data);
-        }).catch((error)=>{
+        }).catch((error) => {
             console.log(error)
         })
     }
@@ -58,6 +61,12 @@ class OrderForm extends React.Component {
             }
         }).catch((error) => {
             console.log(error)
+        })
+    }
+
+    orderLookup() {
+        axios.post("/orderLookup", { email:this.state.emailLookup }).then((result) => {
+            console.log(result.data);
         })
     }
 
@@ -216,6 +225,13 @@ class OrderForm extends React.Component {
         })
     }
 
+    onEmailLookupChange(e){
+        let email = e.target.value.toLowerCase();
+        this.setState({
+            emailLookup:email
+        })
+    }
+
     render() {
         return (
             <div>
@@ -362,6 +378,8 @@ class OrderForm extends React.Component {
                     </FormGroup>
                     <div id="submit-order-btns">
                         <Button onClick={this.createOrder}>Submit Order</Button>
+                        <input type="text" onChange={this.onEmailLookupChange} placeholder="Enter your email"/>
+                        <Button onClick={this.orderLookup}>Order Lookup</Button>
                         <p>Complete PayPal checkout to complete order</p>
                         <PayPal />
                     </div>

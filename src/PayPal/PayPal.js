@@ -9,10 +9,10 @@ class PayPal extends React.Component {
         const onSuccess = (payment) => {
             // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
             console.log("The payment was successful!!", payment);
-            axios.post("/submitPaidOrder", { payment, order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
-                console.log(result)
-                alert("Order Successfully Submitted!");
-            })
+            // axios.post("/submitPaidOrder", { payment, order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
+            //     console.log(result)
+            //     alert("Order Successfully Submitted!");
+            // })
         }
 
         const onCancel = (data) => {

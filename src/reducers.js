@@ -31,7 +31,7 @@ const orderCakeReducer = (state, action) => {
             flavor: '',
             delivery: '',
             plates: '',
-            additonalComments: ''
+            additionalComments: ''
         }
     }
     switch (action.type) {
@@ -78,7 +78,7 @@ const orderCakeReducer = (state, action) => {
         case "changeText":
             return state = {
                 ...state,
-                additonalComments: action.text
+                additionalComments: action.text
             }
         default:
             return state = {
