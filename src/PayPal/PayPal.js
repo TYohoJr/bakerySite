@@ -1,6 +1,6 @@
 import React from "react";
 import PaypalExpressBtn from 'react-paypal-express-checkout';
-import axios from 'axios';
+// import axios from 'axios';
 import { connect } from 'react-redux';
 
 class PayPal extends React.Component {

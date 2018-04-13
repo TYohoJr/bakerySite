@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import OrderLookup from "../OrderLookup/OrderLookup";
 
 export default class Header extends React.Component {
     render() {
@@ -27,6 +28,7 @@ export default class Header extends React.Component {
                         <p className="header-hours-lines">Su & Mon - Closed</p>
                     </div>
                 </div>
+                <OrderLookup />
             </div>
         )
     }

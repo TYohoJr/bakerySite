@@ -1,0 +1,8 @@
+.modal-content {
+    width:auto!important;
+    display: inline-block;
+}
+
+#lookup-table {
+    text-align: center;
+}
