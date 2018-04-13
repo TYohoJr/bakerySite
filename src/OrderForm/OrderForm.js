@@ -107,6 +107,7 @@ class OrderForm extends React.Component {
     }
 
     onEmailChange(e) {
+        e.target.value = e.target.value.toLowerCase();
         this.props.dispatch({
             type: "changeEmail",
             email: e.target.value

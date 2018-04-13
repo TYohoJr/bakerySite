@@ -1,14 +1,15 @@
 import React from "react";
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 import axios from 'axios';
+import { connect } from 'react-redux';
 
-export default class PayPal extends React.Component {
+class PayPal extends React.Component {
 
     render() {
         const onSuccess = (payment) => {
             // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
             console.log("The payment was successful!!", payment);
-            axios.post("/submitPaidOrder", { payment }).then((result) => {
+            axios.post("/submitPaidOrder", { payment, order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
                 console.log(result)
                 alert("Order Successfully Submitted!");
             })
@@ -42,6 +43,8 @@ export default class PayPal extends React.Component {
         );
     }
 }
+
+export default connect((state) => (state))(PayPal);
 
 
 /*
