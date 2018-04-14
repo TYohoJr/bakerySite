@@ -82,7 +82,6 @@ class OrderLookup extends React.Component {
         })
     }
 
-
     onEmailLookupChange(e) {
         let email = e.target.value.toLowerCase();
         this.setState({

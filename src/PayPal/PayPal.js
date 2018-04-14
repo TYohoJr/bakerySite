@@ -1,6 +1,6 @@
 import React from "react";
 import PaypalExpressBtn from 'react-paypal-express-checkout';
-// import axios from 'axios';
+import axios from 'axios';
 import { connect } from 'react-redux';
 
 class PayPal extends React.Component {
@@ -9,10 +9,11 @@ class PayPal extends React.Component {
         const onSuccess = (payment) => {
             // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
             console.log("The payment was successful!!", payment);
-            // axios.post("/submitPaidOrder", { payment, order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
-            //     console.log(result)
-            //     alert("Order Successfully Submitted!");
-            // })
+            axios.post("/createOrder", { order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
+                alert(result.data.message);
+            }).catch((error) => {
+                console.log(error)
+            })
         }
 
         const onCancel = (data) => {
@@ -27,7 +28,7 @@ class PayPal extends React.Component {
             alert("There was an error loading PayPal");
         }
 
-        let env = 'sandbox'; // you can set here to 'production' for production
+        let env = 'production'; // you can set here to 'production' for production
         let currency = 'USD'; // or you can set this value from your props or state  
         let total = 10; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
 

@@ -1,8 +1,7 @@
 import React from "react";
 import "./OrderForm.css";
-import axios from "axios";
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 import PayPal from "../PayPal/PayPal";
 import CakeModal from "../CakeModal/CakeModal";
 import MapModal from "../MapModal/MapModal";
@@ -12,13 +11,11 @@ class OrderForm extends React.Component {
     constructor() {
         super();
         this.onUserNameChange = this.onUserNameChange.bind(this);
-        this.submitOrder = this.submitOrder.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
         this.onAddressCityChange = this.onAddressCityChange.bind(this);
         this.onAddressStateChange = this.onAddressStateChange.bind(this);
         this.onAddressStreetChange = this.onAddressStreetChange.bind(this);
         this.onAddressZipChange = this.onAddressZipChange.bind(this);
-        this.createOrder = this.createOrder.bind(this);
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onNumberChange = this.onNumberChange.bind(this);
         this.onDateNeededChange = this.onDateNeededChange.bind(this);
@@ -36,29 +33,6 @@ class OrderForm extends React.Component {
             text: "",
             newForm: '',
         }
-    }
-
-    createOrder() {
-        axios.post("/createOrder", { order: this.props.orderCakeReducer, info: this.props.orderFormReducer }).then((result) => {
-            alert(result.data.message);
-        }).catch((error) => {
-            console.log(error)
-        })
-    }
-
-    submitOrder() {
-        axios.post("/submitOrder", { username: this.props.orderFormReducer.username }).then((result) => {
-            console.log(result)
-            switch (result.data.code) {
-                case "23505":
-                    alert(`Error: Username already exists`)
-                    break;
-                default:
-                    alert(`Order sucessfully submitted on ${result.headers.date}`)
-            }
-        }).catch((error) => {
-            console.log(error)
-        })
     }
 
     onUserNameChange(e) {
@@ -361,8 +335,6 @@ class OrderForm extends React.Component {
                         <small>{this.state.text.length}/300</small>
                     </FormGroup>
                     <div id="submit-order-btns">
-                        <Button onClick={this.createOrder}>Submit Order</Button>
-
                         <p>Complete PayPal checkout to complete order</p>
                         <PayPal />
                     </div>
