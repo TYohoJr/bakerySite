@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import Directions from "../Directions/Directions";
 
 class LandingPage extends React.Component {
-
     render() {
         return (
             <div>

@@ -1,11 +1,12 @@
 import React from "react";
 import "./OrderForm.css";
 import { connect } from 'react-redux';
-import { Form, FormGroup, Label, Input } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import PayPal from "../PayPal/PayPal";
 import CakeModal from "../CakeModal/CakeModal";
 import MapModal from "../MapModal/MapModal";
 import LayersGuideModal from "../LayersGuideModal/LayersGuideModal";
+import axios from "axios";
 
 class OrderForm extends React.Component {
     constructor() {
@@ -29,9 +30,37 @@ class OrderForm extends React.Component {
         this.onFrostingFondantChange = this.onFrostingFondantChange.bind(this);
         this.onDeliveryChange = this.onDeliveryChange.bind(this);
         this.onPlatesChange = this.onPlatesChange.bind(this);
+        this.verifyOrder = this.verifyOrder.bind(this);
         this.state = {
             text: "",
             newForm: '',
+            checkoutBtn: <div>
+                <Button onClick={this.verifyOrder}>Verify Order</Button>
+                <br />
+                <small>*one more step before submitting the order*</small>
+            </div>
+        }
+    }
+
+    verifyOrder() {
+        let orderInfo = this.props.orderFormReducer;
+        let orderDetails = this.props.orderCakeReducer;
+        if (orderInfo.email && orderInfo.username && orderInfo.addressCity && orderInfo.addressState && orderInfo.addressStreet && orderInfo.addressZip && orderInfo.number && orderInfo.dateNeeded && orderDetails.flavor && orderDetails.frostingFondant && orderDetails.delivery && orderDetails.plates) {
+            axios.post("/checkDuplicate", { email: this.props.orderFormReducer.email }).then((result) => {
+                if (result.data.duplicateCheck) {
+                    alert(result.data.message);
+                } else {
+                    console.log(result)
+                    this.setState({
+                        checkoutBtn: <div>
+                            <p>Complete PayPal checkout to complete order</p>
+                            <PayPal />
+                        </div>
+                    })
+                }
+            })
+        } else {
+            alert("Please fill out all fields");
         }
     }
 
@@ -335,8 +364,7 @@ class OrderForm extends React.Component {
                         <small>{this.state.text.length}/300</small>
                     </FormGroup>
                     <div id="submit-order-btns">
-                        <p>Complete PayPal checkout to complete order</p>
-                        <PayPal />
+                        {this.state.checkoutBtn}
                     </div>
                 </Form>
             </div>

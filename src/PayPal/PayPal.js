@@ -4,7 +4,6 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 class PayPal extends React.Component {
-
     render() {
         const onSuccess = (payment) => {
             // You can bind the "payment" object's value to your state or props or whatever here, please see below for sample returned data
@@ -30,7 +29,7 @@ class PayPal extends React.Component {
 
         let env = 'production'; // you can set here to 'production' for production
         let currency = 'USD'; // or you can set this value from your props or state  
-        let total = 10; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
+        let total = 1; // same as above, this is the total amount (based on currency) to be paid by using Paypal express checkout
 
         const client = {
             sandbox: 'AVBPOvA6ZCJ_fm8f7b4vFj1yHzU5OxacQBv3wG2ga2IzIuW0WSfx54UH-S2dOnjNHwRBuBjqR5P4lpUN',
