@@ -24,7 +24,7 @@ export default class LayersGuideModal extends React.Component {
                 <Button id="cake-modal-btn" color="primary" onClick={this.toggle}>Guide</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalBody>
-                        <img src={require("../images/servings-guide.jpg")} alt="servings guide"/>
+                        <img src={require("../images/servings-guide.jpg")} alt="servings guide" />
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Ok</Button>

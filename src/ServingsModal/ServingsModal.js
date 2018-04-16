@@ -29,7 +29,7 @@ class ServingsModal extends React.Component {
         this.props.dispatch({
             type: "totalCakeSize",
             totalCakeSize: total,
-            totalCakeHeight:totalHeight
+            totalCakeHeight: totalHeight
         })
         this.toggle()
     }
@@ -73,7 +73,7 @@ class ServingsModal extends React.Component {
             <div>
                 <Button id="size-calculator-btn" color="primary" onClick={this.toggle}>Cake Size Calculator</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Servings Guide<br/>(Each layer is 4 inches tall)</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Servings Guide<br />(Each layer is 4 inches tall)</ModalHeader>
                     <ModalBody>
                         <img src={require("../images/servings-guide.jpg")} alt="servings guide" />
                         <FormGroup tag="fieldset">

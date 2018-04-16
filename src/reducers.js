@@ -257,7 +257,7 @@ const cakeSizeReducer = (state, action) => {
         case "totalCakeSize":
             return state = {
                 totalCakeSize: action.totalCakeSize,
-                totalCakeHeight:action.totalCakeHeight
+                totalCakeHeight: action.totalCakeHeight
             }
         case "resetTotal":
             return state = {
