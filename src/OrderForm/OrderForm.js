@@ -36,9 +36,7 @@ class OrderForm extends React.Component {
             text: "",
             newForm: '',
             checkoutBtn: <div>
-                <Button onClick={this.verifyOrder}>Verify Order</Button>
-                <br />
-                <small>*one more step before submitting the order*</small>
+                <Button onClick={this.verifyOrder}>Submit Order</Button>
             </div>
         }
     }
@@ -54,7 +52,7 @@ class OrderForm extends React.Component {
                     console.log(result)
                     this.setState({
                         checkoutBtn: <div>
-                            <p>Complete PayPal checkout to complete order</p>
+                            <h3>Complete PayPal checkout to complete order</h3>
                             <PayPal />
                         </div>
                     })
