@@ -7,6 +7,7 @@ class OrderPage extends React.Component {
     render() {
         return (
             <div>
+                <p>Submitting an order requires</p>
                 <OrderForm />
             </div>
         )

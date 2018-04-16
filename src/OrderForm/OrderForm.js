@@ -31,6 +31,7 @@ class OrderForm extends React.Component {
         this.onDeliveryChange = this.onDeliveryChange.bind(this);
         this.onPlatesChange = this.onPlatesChange.bind(this);
         this.verifyOrder = this.verifyOrder.bind(this);
+        this.onContactChange = this.onContactChange.bind(this);
         this.state = {
             text: "",
             newForm: '',
@@ -45,7 +46,7 @@ class OrderForm extends React.Component {
     verifyOrder() {
         let orderInfo = this.props.orderFormReducer;
         let orderDetails = this.props.orderCakeReducer;
-        if (orderInfo.email && orderInfo.username && orderInfo.addressCity && orderInfo.addressState && orderInfo.addressStreet && orderInfo.addressZip && orderInfo.number && orderInfo.dateNeeded && orderDetails.flavor && orderDetails.frostingFondant && orderDetails.delivery && orderDetails.plates) {
+        if (orderInfo.email && orderInfo.username && orderInfo.addressCity && orderInfo.addressState && orderInfo.addressStreet && orderInfo.addressZip && orderInfo.number && orderInfo.dateNeeded && orderInfo.contact && orderDetails.flavor && orderDetails.frostingFondant && orderDetails.delivery && orderDetails.plates) {
             axios.post("/checkDuplicate", { email: this.props.orderFormReducer.email }).then((result) => {
                 if (result.data.duplicateCheck) {
                     alert(result.data.message);
@@ -219,6 +220,13 @@ class OrderForm extends React.Component {
         })
     }
 
+    onContactChange(e) {
+        this.props.dispatch({
+            type: "changeContact",
+            contact: e.target.value
+        })
+    }
+
     render() {
         return (
             <div>
@@ -235,6 +243,21 @@ class OrderForm extends React.Component {
                     <FormGroup>
                         <Label for="number">Phone Number</Label>
                         <Input type="tel" name="number" id="number" onChange={this.onNumberChange} placeholder="555-555-5555" />
+                    </FormGroup>
+                    <FormGroup tag="fieldset">
+                        <Label for="contact">Contact Preference</Label>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="contact" value="email" onClick={this.onContactChange} />{' '}
+                                Email
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="contact" value="phone" onClick={this.onContactChange} />{' '}
+                                Phone
+                            </Label>
+                        </FormGroup>
                     </FormGroup>
                     <FormGroup>
                         <Label for="address">Address</Label>
@@ -353,7 +376,7 @@ class OrderForm extends React.Component {
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="plates" value="plastic" onClick={this.onPlatesChange} />{' '}
-                                Plastic ($10 deposit)
+                                Plastic
                             </Label>
                         </FormGroup>
                     </FormGroup>

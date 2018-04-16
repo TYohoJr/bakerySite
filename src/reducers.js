@@ -97,7 +97,8 @@ const orderFormReducer = (state, action) => {
             addressZip: '',
             email: '',
             number: '',
-            dateNeeded: ''
+            dateNeeded: '',
+            contact: ''
         }
     }
     switch (action.type) {
@@ -140,6 +141,11 @@ const orderFormReducer = (state, action) => {
             return state = {
                 ...state,
                 dateNeeded: action.dateNeeded
+            }
+        case "changeContact":
+            return state = {
+                ...state,
+                contact: action.contact
             }
         default:
             return {
