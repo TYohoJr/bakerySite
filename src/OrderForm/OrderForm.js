@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import PayPal from "../PayPal/PayPal";
 import CakeModal from "../CakeModal/CakeModal";
-import MapModal from "../MapModal/MapModal";
+// import MapModal from "../MapModal/MapModal";
 import LayersGuideModal from "../LayersGuideModal/LayersGuideModal";
 import axios from "axios";
 
@@ -347,8 +347,8 @@ class OrderForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label className="label-float" for="delivery">Delivery/Pickup</Label>
-                        <MapModal />
+                        <Label for="delivery">Delivery/Pickup</Label>
+                        {/* <MapModal /> */}
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="delivery" value="delivery" onClick={this.onDeliveryChange} />{' '}

@@ -21,7 +21,7 @@ class LandingPage extends React.Component {
                         Outstanding Taste
                 </div>
                 </div>
-                <div id="directions">
+                <div id="directions-landing-page-component">
                     <Directions />
                 </div>
             </div>

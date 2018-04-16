@@ -80,6 +80,7 @@ class Directions extends React.Component {
                     </div>
                 </div>
                 <div id="panel">
+                <p id="directions-panel-before-map">Enter your address to view directions and estimated travel time --></p>
                 </div>
                 <Route />
             </div>

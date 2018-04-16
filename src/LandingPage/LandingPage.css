@@ -1,9 +1,7 @@
 #landing-page-div {
     float: left;
-    margin-left: 100px;
-    display: inline-block;
-    /* width: auto; */
-    width: 40vw;
+    margin-left: 200px;
+    
 }
 
 .landing-page-pic {
@@ -21,14 +19,7 @@
     margin-left: 80px;
 }
 
-#directions {
-   /* float: right; */
-   display: inline-block;
-   /* width: auto; */
-   width: 40vw;
-}
-
-#panel {
-    display: inline-block;
-    
+#directions-landing-page-component {
+    /* position: absolute; */
+    margin-left: 55%;
 }

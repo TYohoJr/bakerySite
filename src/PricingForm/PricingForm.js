@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ServingsModal from "../ServingsModal/ServingsModal";
 import CakeModal from "../CakeModal/CakeModal";
-import MapModal from "../MapModal/MapModal";
+// import MapModal from "../MapModal/MapModal";
 
 class PricingForm extends React.Component {
     constructor() {
@@ -245,8 +245,8 @@ class PricingForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label className="label-float" for="delivery">Delivery/Pickup</Label>
-                        <MapModal />
+                        <Label for="delivery">Delivery/Pickup</Label>
+                        {/* <MapModal /> */}
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="delivery" value="delivery" onClick={this.pickDelivery} />{' '}
