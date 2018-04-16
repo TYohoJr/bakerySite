@@ -211,9 +211,9 @@ class PricingForm extends React.Component {
             <div>
                 <Form id="pricing-form">
                     <FormGroup>
-                        <Label className="label-float" for="servings">Total Cake Size (totals inches of all layers)</Label>
+                        <Label className="label-float" for="servings">Total Cake Height</Label>
                         <ServingsModal />
-                        <Input disabled type="number" name="servings" id="servings" value={this.props.cakeSizeReducer.totalCakeSize} placeholder="Total Cake Size (use calculator above)" />
+                        <Input disabled type="text" name="servings" id="servings" value={`Total Height: ${this.props.cakeSizeReducer.totalCakeHeight}`} placeholder="Total Cake Size (use calculator above)" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="flavor">Flavor</Label>

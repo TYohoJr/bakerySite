@@ -20,11 +20,16 @@ class ServingsModal extends React.Component {
     }
 
     calculateEstimatePrice() {
+        let totalHeight = 4;
         let layerSizes = this.props.layerSizeReducer;
+        if (layerSizes.secondLayerSize) totalHeight = totalHeight + 4
+        if (layerSizes.thirdLayerSize) totalHeight = totalHeight + 4
+        if (layerSizes.fourthLayerSize) totalHeight = totalHeight + 4
         let total = (layerSizes.firstLayerSize + layerSizes.secondLayerSize + layerSizes.thirdLayerSize + layerSizes.fourthLayerSize)
         this.props.dispatch({
             type: "totalCakeSize",
-            totalCakeSize: total
+            totalCakeSize: total,
+            totalCakeHeight:totalHeight
         })
         this.toggle()
     }
@@ -68,12 +73,12 @@ class ServingsModal extends React.Component {
             <div>
                 <Button id="size-calculator-btn" color="primary" onClick={this.toggle}>Cake Size Calculator</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Servings Guide (click to zoom)</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>Servings Guide<br/>(Each layer is 4 inches tall)</ModalHeader>
                     <ModalBody>
                         <img src={require("../images/servings-guide.jpg")} alt="servings guide" />
                         <FormGroup tag="fieldset">
                             <FormGroup>
-                                <Label for="layers">Size of 1st layer (inches)</Label>
+                                <Label for="layers">Diameter of 1st layer (inches)</Label>
                                 <Input required type="select" name="layer1" id="layers" onChange={this.onFirstLayerChange} multiple>
                                     <option>4</option>
                                     <option>6</option>
@@ -81,7 +86,7 @@ class ServingsModal extends React.Component {
                                     <option>10</option>
                                     <option>12</option>
                                 </Input>
-                                <Label for="layers">Size of 2nd layer (inches)</Label>
+                                <Label for="layers">Diameter of 2nd layer (inches)</Label>
                                 <Input type="select" name="layer2" id="layers" onChange={this.onSecondLayerChange} multiple>
                                     <option>N/A</option>
                                     <option>4</option>
@@ -90,7 +95,7 @@ class ServingsModal extends React.Component {
                                     <option>10</option>
                                     <option>12</option>
                                 </Input>
-                                <Label for="layers">Size of 3rd layer (inches)</Label>
+                                <Label for="layers">Diameter of 3rd layer (inches)</Label>
                                 <Input type="select" name="layer3" id="layers" onChange={this.onThirdLayerChange} multiple>
                                     <option>N/A</option>
                                     <option>4</option>
@@ -99,7 +104,7 @@ class ServingsModal extends React.Component {
                                     <option>10</option>
                                     <option>12</option>
                                 </Input>
-                                <Label for="layers">Size of 4th layer (inches)</Label>
+                                <Label for="layers">Diameter of 4th layer (inches)</Label>
                                 <Input type="select" name="layer4" id="layers" onChange={this.onFourthLayerChange} multiple>
                                     <option>N/A</option>
                                     <option>4</option>

@@ -249,17 +249,20 @@ const setPageReducer = (state, action) => {
 const cakeSizeReducer = (state, action) => {
     if (!state) {
         state = {
-            totalCakeSize: ''
+            totalCakeSize: '',
+            totalCakeHeight: 'Please use calculator above'
         }
     }
     switch (action.type) {
         case "totalCakeSize":
             return state = {
-                totalCakeSize: action.totalCakeSize
+                totalCakeSize: action.totalCakeSize,
+                totalCakeHeight:action.totalCakeHeight
             }
         case "resetTotal":
             return state = {
-                totalCakeSize: ''
+                totalCakeSize: '',
+                totalCakeHeight: 'Please use calculator above'
             }
         default:
             return {

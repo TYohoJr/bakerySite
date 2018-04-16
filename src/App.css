@@ -41,3 +41,8 @@ footer {
 .navbar {
   padding: 0px!important;
 }
+
+.modal-header {
+  text-align: center;
+  
+}

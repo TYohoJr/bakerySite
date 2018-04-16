@@ -28,9 +28,7 @@ export default class CakeModal extends React.Component {
                             <thead>
                                 <tr>
                                     <th>Frosting Basic</th>
-                                    <th>Frosting Wedding</th>
-                                    {/* <th>Fondant Simple</th>
-                                    <th>Fondant 3D/Complex</th> */}
+                                    <th>Wedding</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,12 +39,6 @@ export default class CakeModal extends React.Component {
                                     <td>
                                         <img className="cake-modal-img" src={require("../cake-images-top/wedding1.jpg")} alt="example cake" />
                                     </td>
-                                    {/* <td>
-                                        <img className="cake-modal-img" src={require("../cake-images-top/flowers.jpg")} alt="example cake" />
-                                    </td>
-                                    <td>
-                                        <img className="cake-modal-img" src={require("../cake-images-top/jedi.jpg")} alt="example cake" />
-                                    </td> */}
                                 </tr>
                                 <tr>
                                     <th>Fondant Simple</th>
