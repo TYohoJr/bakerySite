@@ -2,7 +2,6 @@ import React from "react";
 import "./Directions.css";
 import { connect } from "react-redux";
 import { Button } from "reactstrap";
-import Route from "../Route/Route";
 
 const google = window.google;
 
@@ -80,9 +79,8 @@ class Directions extends React.Component {
                     </div>
                 </div>
                 <div id="panel">
-                <p id="directions-panel-before-map">Enter your address to view directions and estimate travel time --></p>
+                    <p id="directions-panel-before-map">Enter your address to view directions and estimate travel time --></p>
                 </div>
-                <Route />
             </div>
         )
     }
