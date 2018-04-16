@@ -92,7 +92,7 @@ class OrderLookup extends React.Component {
     render() {
         return (
             <div>
-                <Button color="primary" onClick={this.toggle}>Order Lookup</Button>
+                <Button id="order-lookup-btn" color="primary" onClick={this.toggle}>Order Lookup</Button>
                 <Modal id="modal-test" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader className="lookup-modal-parts" toggle={this.toggle}>Order Lookup</ModalHeader>
                     <ModalBody className="lookup-modal-parts">

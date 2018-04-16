@@ -14,7 +14,7 @@
 }
 
 #map-form-and-map {
-    float: right;
+    display: inline-block;
 }
 
 .adp-placemark {
