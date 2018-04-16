@@ -7,7 +7,7 @@ class OrderPage extends React.Component {
     render() {
         return (
             <div>
-                <p>Submitting an order requires</p>
+                <p>**Submitting an order requires a $20 deposit that will be credited towards your order total upon final payment**</p>
                 <OrderForm />
             </div>
         )
