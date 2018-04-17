@@ -36,7 +36,7 @@ class OrderForm extends React.Component {
             text: "",
             newForm: '',
             checkoutBtn: <div>
-                <Button onClick={this.verifyOrder}>Submit Order</Button>
+                <Button className="submit-btn" onClick={this.verifyOrder}>Submit Order</Button>
             </div>
         }
     }
@@ -364,7 +364,7 @@ class OrderForm extends React.Component {
                     </FormGroup>
                     <FormGroup tag="fieldset">
                         <Label for="plates">Cardboard or Plastic Cake Plates</Label>
-                        <p><small>Carboard is free. Plastic costs a deposit that is refunded upon return of the plates</small></p>
+                        <p><small>Carboard is free. Plastic costs $10 that is refunded upon return of the plates</small></p>
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="plates" value="cardboard" onClick={this.onPlatesChange} />{' '}

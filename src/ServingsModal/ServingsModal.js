@@ -71,7 +71,7 @@ class ServingsModal extends React.Component {
     render() {
         return (
             <div>
-                <Button id="size-calculator-btn" color="primary" onClick={this.toggle}>Cake Size Calculator</Button>
+                <Button id="size-calculator-btn" className="main-btns" onClick={this.toggle}>Cake Size Calculator</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Servings Guide<br />(Each layer is 4 inches tall)</ModalHeader>
                     <ModalBody>
@@ -117,7 +117,7 @@ class ServingsModal extends React.Component {
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={this.calculateEstimatePrice}>Calculate</Button>{' '}
+                        <Button className="main-btns" onClick={this.calculateEstimatePrice}>Calculate</Button>{' '}
                     </ModalFooter>
                 </Modal>
             </div>

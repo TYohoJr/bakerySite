@@ -46,3 +46,27 @@ footer {
   text-align: center;
   
 }
+
+.main-btns {
+  background-color: #3082ff;
+}
+
+.main-btns:hover {
+  background-color: #2a70d8;
+}
+
+.main-btns:active {
+  background-color: #1f59b1!important;
+}
+
+.submit-btn {
+  background-color: #30ff82;
+}
+
+.submit-btn:hover {
+  background-color: #25d86d;
+}
+
+.submit-btn:active {
+  background-color: #1eaa56!important;
+}

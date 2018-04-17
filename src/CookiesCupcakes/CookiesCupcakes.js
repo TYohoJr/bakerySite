@@ -10,24 +10,34 @@ class CookiesCupcakes extends React.Component {
                     <h1>Gallery</h1>
                 </div>
                 <div>
-                    <img className="alt-img" src={require("../alt-images/12.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/1.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/10.jpg")} alt="cupcakes/cookies" />
-                    <br />
-                    <img className="alt-img" src={require("../alt-images/18.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/4.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/19.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/21.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/7.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/16.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/13.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/6.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/5.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/11.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/20.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/9.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/2.jpg")} alt="cupcakes/cookies" />
-                    <img className="alt-img" src={require("../alt-images/17.jpg")} alt="cupcakes/cookies" />
+                    <div className="alt-img-div">
+                        <img className="alt-img" src={require("../alt-images/12.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/1.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/10.jpg")} alt="cupcakes/cookies" />
+                    </div>
+                    <div className="alt-img-div">
+                        <img className="alt-img" src={require("../alt-images/18.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/4.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/19.jpg")} alt="cupcakes/cookies" />
+                    </div>
+                    <div className="alt-img-div">
+                        <img className="alt-img" src={require("../alt-images/7.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/16.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/13.jpg")} alt="cupcakes/cookies" />
+                        
+                    </div>
+                    <div className="alt-img-div">
+                        <img className="alt-img" src={require("../alt-images/6.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/5.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/11.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/21.jpg")} alt="cupcakes/cookies" />
+                    </div>
+                    <div className="alt-img-div">
+                        <img className="alt-img" src={require("../alt-images/20.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/9.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/2.jpg")} alt="cupcakes/cookies" />
+                        <img className="alt-img" src={require("../alt-images/17.jpg")} alt="cupcakes/cookies" />
+                    </div>
                 </div>
             </div>
         )

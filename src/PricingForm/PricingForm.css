@@ -25,3 +25,15 @@
 #estimate-btn {
     margin-right: 10px;
 }
+
+.reset-btn {
+    background-color: #ff3030;
+}
+
+.reset-btn:hover {
+    background-color: #db2b2b;
+}
+
+.reset-btn:active {
+    background-color: #b62222!important;
+}
