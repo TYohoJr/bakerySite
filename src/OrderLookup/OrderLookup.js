@@ -35,7 +35,7 @@ class OrderLookup extends React.Component {
                                         <th>Name</th>
                                         <th>Location</th>
                                         <th>Email</th>
-                                        <th>Date Ordered</th>
+                                        <th>Preffered Contact</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,7 +43,7 @@ class OrderLookup extends React.Component {
                                         <td>{result.data.name}</td>
                                         <td>{result.data.address_city}, {result.data.address_state}</td>
                                         <td>{result.data.email}</td>
-                                        <td>"Date?"</td>
+                                        <td>{result.data.contact}</td>
                                     </tr>
                                     <tr>
                                         <th>Layer 1 (diameter in inches)</th>
@@ -68,6 +68,16 @@ class OrderLookup extends React.Component {
                                         <td>{result.data.frosting_fondant}</td>
                                         <td>{result.data.delivery}</td>
                                         <td>{result.data.plates}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Time Ordered</th>
+                                        <th>Date Needed</th>
+                                        {/* <th>Delivery/Pickup</th> */}
+                                    </tr>
+                                    <tr>
+                                        <td>{result.data.time}</td>
+                                        <td>{result.data.date_needed}</td>
+                                        {/* <td>{result.data.delivery}</td> */}
                                     </tr>
                                 </tbody>
                             </Table>

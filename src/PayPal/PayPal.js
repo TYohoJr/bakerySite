@@ -18,6 +18,17 @@ class PayPal extends React.Component {
         const onCancel = (data) => {
             // User pressed "cancel" or close Paypal's popup
             console.log('The payment was cancelled!', data);
+
+
+            let time = new Date();
+            axios.post("/createOrder", { order: this.props.orderCakeReducer, info: this.props.orderFormReducer, time:`${time}` }).then((result) => {
+                alert(result.data.message);
+            }).catch((error) => {
+                console.log(error)
+            })
+
+
+
             alert("Paypal transaction was cancelled");
         }
 
