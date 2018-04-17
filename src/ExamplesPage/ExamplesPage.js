@@ -22,7 +22,6 @@ class Examples extends React.Component {
                     <img className="examples-img" src={require("../cake-images/overflow-chocolate.jpg")} alt="cake" />
                     <img className="examples-img" src={require("../cake-images/graduation-golf.jpg")} alt="cake" />
                     <img className="examples-img" src={require("../cake-images/superhero.jpg")} alt="cake" />
-                    <img className="examples-img" src={require("../cake-images/cupcakes1.jpg")} alt="cake" />
                     <img className="examples-img" src={require("../cake-images/fairy-castle.jpg")} alt="cake" />
                     <img className="examples-img" src={require("../cake-images/wedding2.jpg")} alt="cake" />
                     <img className="examples-img" src={require("../cake-images/pink-pig.jpg")} alt="cake" />

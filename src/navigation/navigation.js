@@ -14,6 +14,7 @@ import PricingPage from "../PricingPage/PricingPage";
 import OrderPage from '../OrderPage/OrderPage';
 import ExamplesPage from "../ExamplesPage/ExamplesPage";
 import DirectionsPage from "../DirectionsPage/DirectionsPage";
+import CookiesCupcakes from '../CookiesCupcakes/CookiesCupcakes';
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Navigation extends React.Component {
     this.setOrderPage = this.setOrderPage.bind(this);
     this.setExamplesPage = this.setExamplesPage.bind(this);
     this.setDirectionsPage = this.setDirectionsPage.bind(this);
+    this.setCookiesCupcakes = this.setCookiesCupcakes.bind(this);
   }
 
   toggle() {
@@ -68,6 +70,13 @@ class Navigation extends React.Component {
     })
   }
 
+  setCookiesCupcakes() {
+    this.props.dispatch({
+      type: "setPage",
+      currentPage: <CookiesCupcakes />
+    })
+  }
+
   render() {
     return (
       <div>
@@ -80,7 +89,10 @@ class Navigation extends React.Component {
                   <Button className="navbar-buttons" onClick={this.setHomePage}>Home</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons" onClick={this.setExamplesPage}>Gallery</Button>
+                  <Button className="navbar-buttons" onClick={this.setExamplesPage}>Cakes</Button>
+                </NavItem>
+                <NavItem className="navbar-navitem">
+                  <Button className="navbar-buttons" onClick={this.setCookiesCupcakes}>Cupcakes/Cookies</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setPricingPage}>Pricing</Button>

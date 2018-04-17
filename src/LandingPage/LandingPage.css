@@ -1,6 +1,5 @@
 #landing-page-div {
     float: left;
-    /* margin-left: 200px; */
     width: 50%;
 }
 
@@ -14,10 +13,6 @@
     font-family: cursive;
     font-size: 22px;
     font-style: oblique
-}
-
-#landing-page-info {
-
 }
 
 .landing-page-laura {
