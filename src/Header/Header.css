@@ -19,10 +19,12 @@
 #header-address {
     padding-top: 20px;
     text-align: center;
+    margin-left: 40px;
 }
 
 #header-hours {
     margin-top: 20px;
+    margin-right: 75px;
 }
 
 .header-hours-lines {
@@ -34,5 +36,9 @@
 }
 
 .header-img {
-    height:120px;
+    height:100px;
+}
+
+#header-imgs-div {
+    width: 900px;
 }
