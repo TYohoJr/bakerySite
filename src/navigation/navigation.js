@@ -48,7 +48,8 @@ class Navigation extends React.Component {
   setOrderPage() {
     this.props.dispatch({
       type: "setOrderPage",
-      currentPage: <OrderPage />
+      currentPage: <OrderPage />,
+      activeBtn:"active-btn"
     })
   }
 
@@ -67,7 +68,7 @@ class Navigation extends React.Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.props.navbarReducer.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem className="navbar-navitem">
+                <NavItem className={this.props.setPageReducer.activeBtn} className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setHomePage}>Home</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">

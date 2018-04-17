@@ -219,7 +219,8 @@ const navbarReducer = (state, action) => {
 const setPageReducer = (state, action) => {
     if (!state) {
         state = {
-            currentPage: <LandingPage />
+            currentPage: <LandingPage />,
+            activeBtn: ""
         }
     }
     switch (action.type) {
@@ -233,7 +234,8 @@ const setPageReducer = (state, action) => {
             }
         case "setOrderPage":
             return state = {
-                currentPage: action.currentPage
+                currentPage: action.currentPage,
+                activeBtn: action.activeBtn
             }
         case "setExamplesPage":
             return state = {
