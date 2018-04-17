@@ -1,7 +1,10 @@
 .navbar-buttons {
     margin:5px;
-    background-color: #f39bae94;
+    background-color: #FF3030;
     color: black;
+    width: 25vw;
+    border: none;
+    border-radius: 0 0
 }
 
 .navbar-buttons:hover {
@@ -18,4 +21,8 @@
 
 .navbar-navitem {
     width: 25vw;
+}
+
+.nacbar {
+    background-color: blue
 }
