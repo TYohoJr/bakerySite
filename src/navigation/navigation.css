@@ -1,5 +1,19 @@
 .navbar-buttons {
     margin:5px;
+    background-color: rgba(243, 155, 174, 0.582);
+    color: black;
+}
+
+.navbar-buttons:hover {
+    margin:5px;
+    background-color: rgba(243, 83, 118, 0.582);
+    color: black;
+}
+
+.navbar-buttons:active {
+    margin:5px!important;
+    background-color: rgba(133, 36, 57, 0.582)!important;
+    color: black!important;
 }
 
 .navbar-navitem {

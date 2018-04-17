@@ -22,3 +22,9 @@
 #directions-landing-page-component {
     margin-left: 55%;
 }
+
+.landing-page-divs {
+    font-family: cursive;
+    font-size: 22px;
+    font-style: oblique
+}

@@ -13,7 +13,7 @@ class LandingPage extends React.Component {
                         Made from scratch using the best ingredients
                 </div>
                     <div className="landing-page-divs">
-                        Original Design
+                        Original Designs
                     <img className="landing-page-pic" src={require('../cake-images-top/lego.jpg')} alt="baby cake" />
                     </div>
                     <div className="landing-page-divs">

@@ -363,7 +363,7 @@ class OrderForm extends React.Component {
                         </FormGroup>
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label for="plates">Carboard or Plastic Cake Plates</Label>
+                        <Label for="plates">Cardboard or Plastic Cake Plates</Label>
                         <p><small>Carboard is free. Plastic costs a deposit that is refunded upon return of the plates</small></p>
                         <FormGroup check>
                             <Label check>
@@ -380,7 +380,7 @@ class OrderForm extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleText">Additional Comments:</Label>
-                        <p><small>Tell me more details about the cake you want!</small></p>
+                        <p><small>Tell me more details about the cake you want! Theme, colors etc.</small></p>
                         <Input type="textarea" maxLength="300" onChange={this.onTextChange} name="text" id="exampleText" />
                         <small>{this.state.text.length}/300</small>
                     </FormGroup>

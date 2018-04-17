@@ -70,7 +70,7 @@ class Directions extends React.Component {
             <div id="directions-div">
                 <div id="map-form-and-map">
                     <div className="map-form">
-                        <h2>Get Directions!</h2>
+                        <h3>Get Directions!</h3>
                         <input className="start-input" type="text" value={this.state.start} onChange={this.onStartChange} placeholder="Starting Location" />
                         <br />
                         <Button onClick={this.initMap}>Get Directions!</Button>
