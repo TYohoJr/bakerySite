@@ -219,25 +219,11 @@ const navbarReducer = (state, action) => {
 const setPageReducer = (state, action) => {
     if (!state) {
         state = {
-            currentPage: <LandingPage />,
-            activeBtn: ""
+            currentPage: <LandingPage />
         }
     }
     switch (action.type) {
-        case "setLandingPage":
-            return state = {
-                currentPage: action.currentPage
-            }
-        case "setPricingPage":
-            return state = {
-                currentPage: action.currentPage
-            }
-        case "setOrderPage":
-            return state = {
-                currentPage: action.currentPage,
-                activeBtn: action.activeBtn
-            }
-        case "setExamplesPage":
+        case "setPage":
             return state = {
                 currentPage: action.currentPage
             }

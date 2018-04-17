@@ -23,13 +23,9 @@
 }
 
 .navbar-navitem {
-    width: 25vw;
+    width: 20vw;
 }
 
 .nacbar {
     background-color: blue
-}
-
-.activeBtn {
-    background-color: blueviolet!important;
 }

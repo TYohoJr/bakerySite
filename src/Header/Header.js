@@ -9,7 +9,7 @@ export default class Header extends React.Component {
                 <div id="header-title" className="header-parts">
                     <h1>The Cake Lady</h1>
                     <div>
-                        <img className="header-img" src={require("../images/laura-yoho.jpg")} alt="laura yoho" />
+                        {/* <img className="header-img" src={require("../images/laura-yoho.jpg")} alt="laura yoho" /> */}
                         <img className="header-img" src={require("../cake-images-top/baby.jpg")} alt="laura yoho" />
                         <img className="header-img" src={require("../cake-images-top/wedding1.jpg")} alt="laura yoho" />
                         <img className="header-img" src={require("../cake-images-top/bulldog.jpg")} alt="laura yoho" />

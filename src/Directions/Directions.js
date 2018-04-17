@@ -79,7 +79,6 @@ class Directions extends React.Component {
                     </div>
                 </div>
                 <div id="panel">
-                    <p id="directions-panel-before-map">Enter your address to view directions and estimate travel time --></p>
                 </div>
             </div>
         )

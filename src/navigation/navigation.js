@@ -13,6 +13,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import PricingPage from "../PricingPage/PricingPage";
 import OrderPage from '../OrderPage/OrderPage';
 import ExamplesPage from "../ExamplesPage/ExamplesPage";
+import DirectionsPage from "../DirectionsPage/DirectionsPage";
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Navigation extends React.Component {
     this.setPricingPage = this.setPricingPage.bind(this);
     this.setOrderPage = this.setOrderPage.bind(this);
     this.setExamplesPage = this.setExamplesPage.bind(this);
+    this.setDirectionsPage = this.setDirectionsPage.bind(this);
   }
 
   toggle() {
@@ -33,30 +35,36 @@ class Navigation extends React.Component {
 
   setHomePage() {
     this.props.dispatch({
-      type: "setLandingPage",
+      type: "setPage",
       currentPage: <LandingPage />
     })
   }
 
   setPricingPage() {
     this.props.dispatch({
-      type: "setPricingPage",
+      type: "setPage",
       currentPage: <PricingPage />
     })
   }
 
   setOrderPage() {
     this.props.dispatch({
-      type: "setOrderPage",
-      currentPage: <OrderPage />,
-      activeBtn:"active-btn"
+      type: "setPage",
+      currentPage: <OrderPage />
     })
   }
 
   setExamplesPage() {
     this.props.dispatch({
-      type: "setExamplesPage",
+      type: "setPage",
       currentPage: <ExamplesPage />
+    })
+  }
+
+  setDirectionsPage() {
+    this.props.dispatch({
+      type: "setPage",
+      currentPage: <DirectionsPage />
     })
   }
 
@@ -68,7 +76,7 @@ class Navigation extends React.Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.props.navbarReducer.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem className={this.props.setPageReducer.activeBtn} className="navbar-navitem">
+                <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setHomePage}>Home</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
@@ -79,6 +87,9 @@ class Navigation extends React.Component {
                 </NavItem>
                 <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setOrderPage}>Order</Button>
+                </NavItem>
+                <NavItem className="navbar-navitem">
+                  <Button className="navbar-buttons" onClick={this.setDirectionsPage}>Directions</Button>
                 </NavItem>
               </Nav>
             </Collapse>

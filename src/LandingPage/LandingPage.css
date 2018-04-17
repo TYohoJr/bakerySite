@@ -1,7 +1,7 @@
 #landing-page-div {
     float: left;
-    margin-left: 200px;
-    
+    /* margin-left: 200px; */
+    width: 50%;
 }
 
 .landing-page-pic {
@@ -10,21 +10,16 @@
     margin:20px;
 }
 
-#map {
-    height:300px;
-    width: 300px;
-    margin-right:80px;
-    margin-top:20px;
-    margin-bottom: 80px;
-    margin-left: 80px;
-}
-
-#directions-landing-page-component {
-    margin-left: 55%;
-}
-
 .landing-page-divs {
     font-family: cursive;
     font-size: 22px;
     font-style: oblique
+}
+
+#landing-page-info {
+
+}
+
+.landing-page-laura {
+    height: 300px;
 }
