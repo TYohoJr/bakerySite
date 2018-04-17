@@ -1,5 +1,4 @@
 .navbar-buttons {
-    margin:5px;
     background-color: #FF3030;
     color: black;
     width: 100%;
@@ -8,16 +7,15 @@
     font-family: cursive;
     font-weight: bold;
     font-size: 26px;
+    border-left: 1px solid rgba(0, 0, 0, 0.288)
 }
 
 .navbar-buttons:hover {
-    margin:5px;
     background-color: rgba(243, 83, 118, 0.582);
     color: black;
 }
 
 .navbar-buttons:active {
-    margin:5px!important;
     background-color: rgba(133, 36, 57, 0.582)!important;
     color: black!important;
 }
@@ -26,6 +24,3 @@
     width: 16.666666666666666vw;
 }
 
-.nacbar {
-    background-color: blue
-}
