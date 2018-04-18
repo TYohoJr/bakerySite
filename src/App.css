@@ -48,25 +48,30 @@ footer {
 }
 
 .main-btns {
-  background-color: #5C755E;
+  background-color: #003366;
+
 }
 
 .main-btns:hover {
-  background-color: rgb(72, 94, 74);
+  background-color: #002447;
+
 }
 
 .main-btns:active {
-  background-color: rgb(54, 68, 55)!important;
+  background-color: #001931!important;
+
 }
 
 .submit-btn {
-  background-color: #003366;
+  background-color: #5C755E;
+
 }
 
 .submit-btn:hover {
-  background-color: #002447;
+  background-color: rgb(72, 94, 74);
+
 }
 
 .submit-btn:active {
-  background-color: #001931!important;
+  background-color: rgb(54, 68, 55)!important;
 }

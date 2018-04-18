@@ -15,6 +15,10 @@ class CookiesCupcakes extends React.Component {
                         <img className="alt-img" src={require("../alt-images/1.jpg")} alt="cupcakes/cookies" />
                         <img className="alt-img" src={require("../alt-images/10.jpg")} alt="cupcakes/cookies" />
                     </div>
+                    1 - Bouqet
+                    2 - Tower
+                    3 - Fancy Flower
+
                     <div className="alt-img-div">
                         <img className="alt-img" src={require("../alt-images/18.jpg")} alt="cupcakes/cookies" />
                         <img className="alt-img" src={require("../alt-images/4.jpg")} alt="cupcakes/cookies" />

@@ -276,7 +276,7 @@ class PricingForm extends React.Component {
                             </Label>
                         </FormGroup>
                     </FormGroup>
-                    <Button id="estimate-btn" className="component-float" color="success" onClick={this.calculateTotal}>Estimate Total</Button>
+                    <Button id="estimate-btn" className="submit-btn" onClick={this.calculateTotal}>Estimate Total</Button>
                     <Button className="reset-btn" onClick={this.resetTotal} id="pricing-reset-btn" type="reset">Reset</Button>
                     <p className="label-float">Your estimate is: $<b>{this.props.calculateEstimateReducer.estimateTotal}</b></p>
                 </Form>
