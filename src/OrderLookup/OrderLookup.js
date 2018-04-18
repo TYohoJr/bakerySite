@@ -26,6 +26,14 @@ class OrderLookup extends React.Component {
     orderLookup() {
         axios.post("/orderLookup", { email: this.state.emailLookup }).then((result) => {
             if (result.data) {
+                let cookieInfo = 'none';
+                let cupcakeInfo = 'none';
+                if(result.data.cookie_style) {
+                    cookieInfo = `${result.data.cookie_amount} of: ${result.data.cookie_style}`
+                }
+                if(result.data.cupcake_style) {
+                    cupcakeInfo = `${result.data.cupcake_amount} of: ${result.data.cupcake_style}`
+                }
                 this.setState({
                     orderTable:
                         <div>
@@ -72,12 +80,14 @@ class OrderLookup extends React.Component {
                                     <tr>
                                         <th>Time Ordered</th>
                                         <th>Date Needed</th>
-                                        {/* <th>Delivery/Pickup</th> */}
+                                        <th>Cookies</th>
+                                        <th>Cupcakes</th>
                                     </tr>
                                     <tr>
                                         <td>{result.data.time}</td>
                                         <td>{result.data.date_needed}</td>
-                                        {/* <td>{result.data.delivery}</td> */}
+                                        <td>{cookieInfo}</td>
+                                        <td>{cupcakeInfo}</td>
                                     </tr>
                                 </tbody>
                             </Table>

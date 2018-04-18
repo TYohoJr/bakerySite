@@ -87,30 +87,38 @@ const orderCakeReducer = (state, action) => {
         case "changeCookieStyle":
             return state = {
                 ...state,
-                cupcakeStyle:'',
-                cupcakeAmount:'',
+                cupcakeStyle: '',
+                cupcakeAmount: '',
                 cookieStyle: action.cookieStyle
             }
         case "changeCookieAmount":
             return state = {
                 ...state,
-                cupcakeStyle:'',
-                cupcakeAmount:'',
+                cupcakeStyle: '',
+                cupcakeAmount: '',
                 cookieAmount: action.cookieAmount
             }
         case "changeCupcakeStyle":
             return state = {
                 ...state,
-                cookieStyle:'',
-                cookieAmount:'',
+                cookieStyle: '',
+                cookieAmount: '',
                 cupcakeStyle: action.cupcakeStyle
             }
         case "changeCupcakeAmount":
             return state = {
                 ...state,
-                cookieStyle:'',
-                cookieAmount:'',
+                cookieStyle: '',
+                cookieAmount: '',
                 cupcakeAmount: action.cupcakeAmount
+            }
+        case "changeNoSide":
+            return state = {
+                ...state,
+                cookieStyle: '',
+                cookieAmount: '',
+                cupcakeStyle: '',
+                cupcakeAmount: ''
             }
         default:
             return state = {
@@ -354,6 +362,14 @@ const pricingFormReducer = (state, action) => {
                 cookieStyle: '',
                 cookieAmount: '',
                 cupcakeAmount: action.cupcakeAmount
+            }
+        case "setNoSide":
+            return state = {
+                ...state,
+                cookieStyle: '',
+                cookieAmount: '',
+                cupcakeStyle: '',
+                cupcakeAmount: '',
             }
         case "resetTotal":
             return state = {

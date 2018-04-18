@@ -317,6 +317,9 @@ class PricingForm extends React.Component {
     }
 
     pickNoSide() {
+        this.props.dispatch({
+            type:'setNoSide'
+        })
         this.setState({
             newSideForm: '',
             newSideFormAmount:''

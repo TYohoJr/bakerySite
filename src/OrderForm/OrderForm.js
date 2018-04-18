@@ -11,6 +11,7 @@ import axios from "axios";
 class OrderForm extends React.Component {
     constructor() {
         super();
+        // Bind ALL the functions!!!
         this.onUserNameChange = this.onUserNameChange.bind(this);
         this.onTextChange = this.onTextChange.bind(this);
         this.onAddressCityChange = this.onAddressCityChange.bind(this);
@@ -42,6 +43,7 @@ class OrderForm extends React.Component {
         this.state = {
             text: "",
             newForm: '',
+            // Inital state of checkout button to verify order before proceeding
             checkoutBtn: <div>
                 <Button className="submit-btn" onClick={this.verifyOrder}>Submit Order</Button>
             </div>,
@@ -51,14 +53,17 @@ class OrderForm extends React.Component {
     }
 
     verifyOrder() {
+        // Make data structure more understandable
         let orderInfo = this.props.orderFormReducer;
         let orderDetails = this.props.orderCakeReducer;
+        // Check if all required fields are populated
         if (orderInfo.email && orderInfo.username && orderInfo.addressCity && orderInfo.addressState && orderInfo.addressStreet && orderInfo.addressZip && orderInfo.number && orderInfo.dateNeeded && orderInfo.contact && orderDetails.flavor && orderDetails.frostingFondant && orderDetails.delivery && orderDetails.plates) {
             axios.post("/checkDuplicate", { email: this.props.orderFormReducer.email }).then((result) => {
                 if (result.data.duplicateCheck) {
                     alert(result.data.message);
                 } else {
                     console.log(result)
+                    // If verify is successful change button to the payapl checkout button
                     this.setState({
                         checkoutBtn: <div>
                             <h3>Complete PayPal checkout to complete order</h3>
@@ -118,6 +123,7 @@ class OrderForm extends React.Component {
     }
 
     onEmailChange(e) {
+        // Change email to lowercase to simplify order lookup in the future
         e.target.value = e.target.value.toLowerCase();
         this.props.dispatch({
             type: "changeEmail",
@@ -235,7 +241,6 @@ class OrderForm extends React.Component {
     }
 
     pickCookie() {
-        console.log("pick cookie ran")
         this.setState({
             newSideForm: <div>
                 <FormGroup>
@@ -269,7 +274,6 @@ class OrderForm extends React.Component {
     }
 
     pickCupcake() {
-        console.log("pick cupcake ran")
         this.setState({
             newSideForm: <div>
                 <FormGroup>
@@ -330,6 +334,9 @@ class OrderForm extends React.Component {
     }
 
     pickNoSide() {
+        this.props.dispatch({
+            type:'changeNoSide'
+        })
         this.setState({
             newSideForm: '',
             newSideFormAmount: ''
