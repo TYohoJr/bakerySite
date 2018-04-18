@@ -37,6 +37,8 @@ class PricingForm extends React.Component {
 
     calculateTotal() {
         let total;
+        let cookie = null;
+        let cupcake = null;
         let delivery = null;
         let flavor = null;
         let frosting = null;
@@ -122,7 +124,33 @@ class PricingForm extends React.Component {
             default:
                 plates = 0
         }
-        total = Math.floor((cakeSize * 6) + (flavor * (cakeSize / 8)) + (frosting * (cakeSize / 8)) + delivery + plates)
+        switch (cakeDetails.cookieAmount) {
+            case "1/2 Dozen":
+                cookie = 7.5
+                break;
+            case "1 Dozen":
+                cookie = 15
+                break;
+            case "2 Dozen":
+                cookie = 30
+                break;
+            default:
+                cookie = 0
+        }
+        switch (cakeDetails.cupcakeAmount) {
+            case "1/2 Dozen":
+                cupcake = 20
+                break;
+            case "1 Dozen":
+                cupcake = 40
+                break;
+            case "2 Dozen":
+                cupcake = 80
+                break;
+            default:
+                cupcake = 0
+        }
+        total = Math.floor((cakeSize * 6) + (flavor * (cakeSize / 8)) + (frosting * (cakeSize / 8)) + delivery + plates + cookie + cupcake)
         this.props.dispatch({
             type: "calculateEstimateTotal",
             estimateTotal: total
@@ -142,7 +170,7 @@ class PricingForm extends React.Component {
                 <FormGroup>
                     <Label for="flavor">Frosting Type</Label>
                     <Input type="select" name="frosting" id="flavor" onChange={this.pickFrostingDetails}>
-                        <option>choose one:</option>
+                        <option>Select:</option>
                         <option>Chocolate</option>
                         <option>Lemon</option>
                         <option>Strawberry</option>
@@ -159,7 +187,7 @@ class PricingForm extends React.Component {
                 <FormGroup>
                     <Label for="flavor">Fondant Type</Label>
                     <Input type="select" name="fondant" id="flavor" onChange={this.pickFrostingDetails}>
-                        <option>choose one:</option>
+                        <option>Select:</option>
                         <option>Simple</option>
                         <option>3D/Complex</option>
                     </Input>
@@ -249,7 +277,6 @@ class PricingForm extends React.Component {
                         <option>1/2 Dozen</option>
                         <option>1 Dozen</option>
                         <option>2 Dozen</option>
-                        <option>3 Dozen</option>
                     </Input>
                 </FormGroup>
             </div>
@@ -283,7 +310,6 @@ class PricingForm extends React.Component {
                         <option>1/2 Dozen</option>
                         <option>1 Dozen</option>
                         <option>2 Dozen</option>
-                        <option>3 Dozen</option>
                     </Input>
                 </FormGroup>
             </div>
@@ -292,38 +318,39 @@ class PricingForm extends React.Component {
 
     pickNoSide() {
         this.setState({
-            newSideForm: ''
+            newSideForm: '',
+            newSideFormAmount:''
         })
     }
 
-    pickCookieStyle(e){
+    pickCookieStyle(e) {
         console.log("cookie style change");
         this.props.dispatch({
-            type:'setCookieStyle',
+            type: 'setCookieStyle',
             cookieStyle: e.target.value
         })
     }
 
-    pickCookieAmount(e){
+    pickCookieAmount(e) {
         console.log("cookie amount change");
         this.props.dispatch({
-            type:'setCookieAmount',
+            type: 'setCookieAmount',
             cookieAmount: e.target.value
         })
     }
 
-    pickCupcakeStyle(e){
+    pickCupcakeStyle(e) {
         console.log("cupcake style change");
         this.props.dispatch({
-            type:'setCupcakeStyle',
+            type: 'setCupcakeStyle',
             cupcakeStyle: e.target.value
         })
     }
 
-    pickCupcakeAmount(e){
+    pickCupcakeAmount(e) {
         console.log("cupcake amount change");
         this.props.dispatch({
-            type:'setCupcakeAmount',
+            type: 'setCupcakeAmount',
             cupcakeAmount: e.target.value
         })
     }

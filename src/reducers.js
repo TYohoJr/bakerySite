@@ -31,7 +31,11 @@ const orderCakeReducer = (state, action) => {
             flavor: '',
             delivery: '',
             plates: '',
-            additionalComments: ''
+            additionalComments: '',
+            cookieStyle: '',
+            cookieAmount: '',
+            cupcakeStyle: '',
+            cupcakeAmount: ''
         }
     }
     switch (action.type) {
@@ -79,6 +83,34 @@ const orderCakeReducer = (state, action) => {
             return state = {
                 ...state,
                 additionalComments: action.text
+            }
+        case "changeCookieStyle":
+            return state = {
+                ...state,
+                cupcakeStyle:'',
+                cupcakeAmount:'',
+                cookieStyle: action.cookieStyle
+            }
+        case "changeCookieAmount":
+            return state = {
+                ...state,
+                cupcakeStyle:'',
+                cupcakeAmount:'',
+                cookieAmount: action.cookieAmount
+            }
+        case "changeCupcakeStyle":
+            return state = {
+                ...state,
+                cookieStyle:'',
+                cookieAmount:'',
+                cupcakeStyle: action.cupcakeStyle
+            }
+        case "changeCupcakeAmount":
+            return state = {
+                ...state,
+                cookieStyle:'',
+                cookieAmount:'',
+                cupcakeAmount: action.cupcakeAmount
             }
         default:
             return state = {
@@ -298,29 +330,29 @@ const pricingFormReducer = (state, action) => {
         case "setCookieStyle":
             return state = {
                 ...state,
-                cupcakeStyle:'',
-                cupcakeAmount:'',
+                cupcakeStyle: '',
+                cupcakeAmount: '',
                 cookieStyle: action.cookieStyle
             }
         case "setCookieAmount":
             return state = {
                 ...state,
-                cupcakeStyle:'',
-                cupcakeAmount:'',
+                cupcakeStyle: '',
+                cupcakeAmount: '',
                 cookieAmount: action.cookieAmount
             }
         case "setCupcakeStyle":
             return state = {
                 ...state,
-                cookieStyle:'',
-                cookieAmount:'',
+                cookieStyle: '',
+                cookieAmount: '',
                 cupcakeStyle: action.cupcakeStyle
             }
         case "setCupcakeAmount":
             return state = {
                 ...state,
-                cookieStyle:'',
-                cookieAmount:'',
+                cookieStyle: '',
+                cookieAmount: '',
                 cupcakeAmount: action.cupcakeAmount
             }
         case "resetTotal":
