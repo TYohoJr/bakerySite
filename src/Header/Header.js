@@ -24,9 +24,9 @@ export default class Header extends React.Component {
                     </div>
                     <div id="header-hours" className="header-parts">
                         <p id="header-hours-title" className="header-hours-lines">Hours:</p>
-                        <p className="header-hours-lines">Tu-Fr 9am - 6pm</p>
-                        <p className="header-hours-lines">Sat 9am - 3pm</p>
-                        <p className="header-hours-lines">Su & Mon - Closed</p>
+                        <p className="header-hours-lines">Tu-Fr: 9am - 6pm</p>
+                        <p className="header-hours-lines">Sat: 9am - 3pm</p>
+                        <p className="header-hours-lines">Su & Mon: - Closed</p>
                     </div>
                 </div>
                 <OrderLookup />

@@ -92,7 +92,7 @@ class Navigation extends React.Component {
                   <Button className="navbar-buttons" onClick={this.setExamplesPage}>Cakes</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons" onClick={this.setCookiesCupcakes}>Cupcakes/Cookies</Button>
+                  <Button className="navbar-buttons" onClick={this.setCookiesCupcakes}>Cookies/Cupcakes</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setPricingPage}>Pricing</Button>

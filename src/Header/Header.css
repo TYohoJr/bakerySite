@@ -1,5 +1,6 @@
-#business-hours {
+#header-hours {
     text-align: center;
+    font-family: cursive;
 }
 
 #header-div {
@@ -14,6 +15,8 @@
 
 #header-title {
     width: 40%;
+    font-family: cursive;
+    font-weight: bolder;
 }
 
 #header-address {
@@ -41,4 +44,9 @@
 
 #header-imgs-div {
     width: 900px;
+}
+
+#header-all-info {
+    font-family: cursive;
+    font-weight: bold;
 }
