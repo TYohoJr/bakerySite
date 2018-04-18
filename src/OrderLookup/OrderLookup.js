@@ -116,7 +116,7 @@ class OrderLookup extends React.Component {
                 <Modal id="modal-test" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader className="lookup-modal-parts" toggle={this.toggle}>Order Lookup</ModalHeader>
                     <ModalBody className="lookup-modal-parts">
-                        <input type="text" onChange={this.onEmailLookupChange} placeholder="Enter your email" />
+                        <input type="text" maxlength="30" onChange={this.onEmailLookupChange} placeholder="Enter your email" />
                         <Button onClick={this.orderLookup}>Order Lookup</Button>
                         {this.state.orderTable}
                     </ModalBody>
