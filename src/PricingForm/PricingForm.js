@@ -20,9 +20,18 @@ class PricingForm extends React.Component {
         this.pickCardboard = this.pickCardboard.bind(this);
         this.pickPlastic = this.pickPlastic.bind(this);
         this.resetTotal = this.resetTotal.bind(this);
+        this.pickNoSide = this.pickNoSide.bind(this);
+        this.pickCookie = this.pickCookie.bind(this);
+        this.pickCupcake = this.pickCupcake.bind(this);
+        this.pickCookieStyle = this.pickCookieStyle.bind(this);
+        this.pickCookieAmount = this.pickCookieAmount.bind(this);
+        this.pickCupcakeStyle = this.pickCupcakeStyle.bind(this);
+        this.pickCupcakeAmount = this.pickCupcakeAmount.bind(this);
         this.state = {
             newForm: '',
-            exampleImage: ''
+            exampleImage: '',
+            newSideForm: '',
+            newSideFormAmount: ''
         }
     }
 
@@ -34,6 +43,7 @@ class PricingForm extends React.Component {
         let plates = null;
         let cakeSize = this.props.cakeSizeReducer.totalCakeSize
         let cakeDetails = this.props.pricingFormReducer
+        debugger
         if (!cakeSize) {
             this.props.dispatch({
                 type: "calculateEstimateTotal",
@@ -204,6 +214,118 @@ class PricingForm extends React.Component {
         this.props.dispatch({
             type: 'resetTotal'
         })
+        this.setState({
+            newForm: '',
+            newSideForm: '',
+            newSideFormAmount: ''
+        })
+    }
+
+    pickCookie() {
+        console.log("pick cookie ran")
+        this.setState({
+            newSideForm: <div>
+                <FormGroup>
+                    <Label for="flavor">Cookies Style</Label>
+                    <Input type="select" name="side" id="side" onChange={this.pickCookieStyle}>
+                        <option>Select:</option>
+                        <option>4 - Ice Cream</option>
+                        <option>5 - Emoji</option>
+                        <option>6 - Carrots</option>
+                        <option>10 - Christmas</option>
+                        <option>11 - Snowmen</option>
+                        <option>12 - Christmas 2</option>
+                        <option>16 - Graduation</option>
+                        <option>17 - Swirl</option>
+                        <option>Other</option>
+                    </Input>
+                </FormGroup>
+            </div>,
+            newSideFormAmount: <div>
+                <FormGroup>
+                    <Label for="flavor">Amount needed</Label>
+                    <Input type="select" name="side" id="side" onChange={this.pickCookieAmount}>
+                        <option>Select:</option>
+                        <option>1/2 Dozen</option>
+                        <option>1 Dozen</option>
+                        <option>2 Dozen</option>
+                        <option>3 Dozen</option>
+                    </Input>
+                </FormGroup>
+            </div>
+        })
+    }
+
+    pickCupcake() {
+        console.log("pick cupcake ran")
+        this.setState({
+            newSideForm: <div>
+                <FormGroup>
+                    <Label for="flavor">Cupcakes Style</Label>
+                    <Input type="select" name="side" id="side" onChange={this.pickCupcakeStyle}>
+                        <option>Select:</option>
+                        <option>1 - Bouqet</option>
+                        <option>2 - Event</option>
+                        <option>3 - Fancy</option>
+                        <option>8 - Garden</option>
+                        <option>13 - Hearts</option>
+                        <option>14 - Frosting</option>
+                        <option>15 - Oreo</option>
+                        <option>Other</option>
+                    </Input>
+                </FormGroup>
+            </div>,
+            newSideFormAmount: <div>
+                <FormGroup>
+                    <Label for="flavor">Amount needed</Label>
+                    <Input type="select" name="side" id="side" onChange={this.pickCupcakeAmount}>
+                        <option>Select:</option>
+                        <option>1/2 Dozen</option>
+                        <option>1 Dozen</option>
+                        <option>2 Dozen</option>
+                        <option>3 Dozen</option>
+                    </Input>
+                </FormGroup>
+            </div>
+        })
+    }
+
+    pickNoSide() {
+        this.setState({
+            newSideForm: ''
+        })
+    }
+
+    pickCookieStyle(e){
+        console.log("cookie style change");
+        this.props.dispatch({
+            type:'setCookieStyle',
+            cookieStyle: e.target.value
+        })
+    }
+
+    pickCookieAmount(e){
+        console.log("cookie amount change");
+        this.props.dispatch({
+            type:'setCookieAmount',
+            cookieAmount: e.target.value
+        })
+    }
+
+    pickCupcakeStyle(e){
+        console.log("cupcake style change");
+        this.props.dispatch({
+            type:'setCupcakeStyle',
+            cupcakeStyle: e.target.value
+        })
+    }
+
+    pickCupcakeAmount(e){
+        console.log("cupcake amount change");
+        this.props.dispatch({
+            type:'setCupcakeAmount',
+            cupcakeAmount: e.target.value
+        })
     }
 
     render() {
@@ -244,9 +366,33 @@ class PricingForm extends React.Component {
                         </FormGroup>
                         {this.state.newForm}
                     </FormGroup>
+                    {/* ////////////// */}
+                    <FormGroup tag="fieldset">
+                        <Label for="side">Cookies & Cupcakes</Label>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="side" onChange={this.pickNoSide} />{' '}
+                                None
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="side" onChange={this.pickCookie} />{' '}
+                                Cookies
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="radio" name="side" onChange={this.pickCupcake} />{' '}
+                                Cupcakes
+                            </Label>
+                        </FormGroup>
+                        {this.state.newSideForm}
+                        {this.state.newSideFormAmount}
+                    </FormGroup>
+                    {/* ////////////// */}
                     <FormGroup tag="fieldset">
                         <Label for="delivery">Delivery/Pickup</Label>
-                        {/* <MapModal /> */}
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="delivery" value="delivery" onClick={this.pickDelivery} />{' '}
