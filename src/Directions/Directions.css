@@ -1,7 +1,3 @@
-/* .map-form {
-
-} */
-
 .start-input {
     margin: 20px;
 }
@@ -9,14 +5,11 @@
 #panel {
     float: left;
     margin: 50px;
+    max-width: 525px;
 }
 
 #map-form-and-map {
     display: inline-block;
-}
-
-.adp-placemark {
-    width: 525px;
 }
 
 .adp-summary {
