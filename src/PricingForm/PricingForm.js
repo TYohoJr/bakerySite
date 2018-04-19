@@ -88,7 +88,7 @@ class PricingForm extends React.Component {
             case "Red Velvet":
                 flavor = 10
                 break;
-            case "Other":
+            case "Other/Multiple":
                 flavor = 10
                 break;
             default:
@@ -267,8 +267,8 @@ class PricingForm extends React.Component {
                         <option>11 - Snowmen</option>
                         <option>12 - Christmas 2</option>
                         <option>16 - Graduation</option>
-                        <option>17 - Swirl</option>
-                        <option>Other</option>
+                        <option>17 - Pinwheel</option>
+                        <option>Other/Multiple</option>
                     </Input>
                 </FormGroup>
             </div>,
@@ -301,7 +301,7 @@ class PricingForm extends React.Component {
                         <option>13 - Hearts</option>
                         <option>14 - Frosting</option>
                         <option>15 - Oreo</option>
-                        <option>Other</option>
+                        <option>Other/Multiple</option>
                     </Input>
                 </FormGroup>
             </div>,
@@ -375,7 +375,7 @@ class PricingForm extends React.Component {
                             <option>Lemon</option>
                             <option>Strawberry</option>
                             <option>Red Velvet</option>
-                            <option>Other</option>
+                            <option>Other/Multiple</option>
                         </Input>
                     </FormGroup>
                     <FormGroup tag="fieldset">
@@ -396,7 +396,7 @@ class PricingForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label for="side">Cookies & Cupcakes</Label>
+                        <Label for="side">Cookies & Cupcakes (Optional)</Label>
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="side" onChange={this.pickNoSide} />{' '}

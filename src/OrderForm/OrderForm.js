@@ -254,8 +254,8 @@ class OrderForm extends React.Component {
                         <option>11 - Snowmen</option>
                         <option>12 - Christmas 2</option>
                         <option>16 - Graduation</option>
-                        <option>17 - Swirl</option>
-                        <option>Other</option>
+                        <option>17 - Pinwheel</option>
+                        <option>Other/Multiple</option>
                     </Input>
                 </FormGroup>
             </div>,
@@ -287,7 +287,7 @@ class OrderForm extends React.Component {
                         <option>13 - Hearts</option>
                         <option>14 - Frosting</option>
                         <option>15 - Oreo</option>
-                        <option>Other</option>
+                        <option>Other/Multiple</option>
                     </Input>
                 </FormGroup>
             </div>,
@@ -446,7 +446,7 @@ class OrderForm extends React.Component {
                             <option>Lemon</option>
                             <option>Strawberry</option>
                             <option>Red Velvet</option>
-                            <option>Other</option>
+                            <option>Other/Multiple</option>
                         </Input>
                     </FormGroup>
                     <FormGroup tag="fieldset">
@@ -467,7 +467,7 @@ class OrderForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label for="side">Cookies & Cupcakes</Label>
+                        <Label for="side">Cookies & Cupcakes (Optional)</Label>
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="side" onChange={this.pickNoSide} />{' '}
@@ -523,8 +523,8 @@ class OrderForm extends React.Component {
                     <FormGroup>
                         <Label for="exampleText">Additional Comments:</Label>
                         <p><small>Tell me more details about the cake you want! Theme, colors etc.</small></p>
-                        <Input type="textarea" maxLength="300" onChange={this.onTextChange} name="text" id="exampleText" />
-                        <small>{this.state.text.length}/300</small>
+                        <Input type="textarea" maxLength="500" onChange={this.onTextChange} name="text" id="exampleText" />
+                        <small>{this.state.text.length}/500</small>
                     </FormGroup>
                     <div id="submit-order-btns">
                         {this.state.checkoutBtn}
