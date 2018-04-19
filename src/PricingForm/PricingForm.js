@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import ServingsModal from "../ServingsModal/ServingsModal";
 import CakeModal from "../CakeModal/CakeModal";
-// import MapModal from "../MapModal/MapModal";
 
 class PricingForm extends React.Component {
     constructor() {
         super();
+        // Bind ALL the functions!
         this.onEmailChange = this.onEmailChange.bind(this);
         this.calculateTotal = this.calculateTotal.bind(this);
         this.pickFrosting = this.pickFrosting.bind(this);
@@ -36,6 +36,7 @@ class PricingForm extends React.Component {
     }
 
     calculateTotal() {
+        // Set initial state of all variables used in the calculation
         let total;
         let cookie = null;
         let cupcake = null;
@@ -45,7 +46,6 @@ class PricingForm extends React.Component {
         let plates = null;
         let cakeSize = this.props.cakeSizeReducer.totalCakeSize
         let cakeDetails = this.props.pricingFormReducer
-        debugger
         if (!cakeSize) {
             this.props.dispatch({
                 type: "calculateEstimateTotal",
@@ -53,6 +53,7 @@ class PricingForm extends React.Component {
             })
             return;
         }
+        // Make sure all required fields are filled out
         if (!cakeDetails.delivery || !cakeDetails.flavor || !cakeDetails.frosting || !cakeDetails.plates) {
             this.props.dispatch({
                 type: "calculateEstimateTotal",
@@ -60,6 +61,7 @@ class PricingForm extends React.Component {
             })
             return;
         }
+        // All the switch statements to determine price based on value
         switch (cakeDetails.delivery) {
             case "delivery":
                 delivery = 20
@@ -150,6 +152,7 @@ class PricingForm extends React.Component {
             default:
                 cupcake = 0
         }
+        // Use new totals to calculate estimate
         total = Math.floor((cakeSize * 6) + (flavor * (cakeSize / 8)) + (frosting * (cakeSize / 8)) + delivery + plates + cookie + cupcake)
         this.props.dispatch({
             type: "calculateEstimateTotal",
@@ -318,16 +321,15 @@ class PricingForm extends React.Component {
 
     pickNoSide() {
         this.props.dispatch({
-            type:'setNoSide'
+            type: 'setNoSide'
         })
         this.setState({
             newSideForm: '',
-            newSideFormAmount:''
+            newSideFormAmount: ''
         })
     }
 
     pickCookieStyle(e) {
-        console.log("cookie style change");
         this.props.dispatch({
             type: 'setCookieStyle',
             cookieStyle: e.target.value
@@ -335,7 +337,6 @@ class PricingForm extends React.Component {
     }
 
     pickCookieAmount(e) {
-        console.log("cookie amount change");
         this.props.dispatch({
             type: 'setCookieAmount',
             cookieAmount: e.target.value
@@ -343,7 +344,6 @@ class PricingForm extends React.Component {
     }
 
     pickCupcakeStyle(e) {
-        console.log("cupcake style change");
         this.props.dispatch({
             type: 'setCupcakeStyle',
             cupcakeStyle: e.target.value
@@ -351,7 +351,6 @@ class PricingForm extends React.Component {
     }
 
     pickCupcakeAmount(e) {
-        console.log("cupcake amount change");
         this.props.dispatch({
             type: 'setCupcakeAmount',
             cupcakeAmount: e.target.value
@@ -396,7 +395,6 @@ class PricingForm extends React.Component {
                         </FormGroup>
                         {this.state.newForm}
                     </FormGroup>
-                    {/* ////////////// */}
                     <FormGroup tag="fieldset">
                         <Label for="side">Cookies & Cupcakes</Label>
                         <FormGroup check>
@@ -420,7 +418,6 @@ class PricingForm extends React.Component {
                         {this.state.newSideForm}
                         {this.state.newSideFormAmount}
                     </FormGroup>
-                    {/* ////////////// */}
                     <FormGroup tag="fieldset">
                         <Label for="delivery">Delivery/Pickup</Label>
                         <FormGroup check>

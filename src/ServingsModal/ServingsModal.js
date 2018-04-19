@@ -31,6 +31,7 @@ class ServingsModal extends React.Component {
             totalCakeSize: total,
             totalCakeHeight: totalHeight
         })
+        // Toggle modal after dispatching
         this.toggle()
     }
 
@@ -43,6 +44,7 @@ class ServingsModal extends React.Component {
     onFirstLayerChange(e) {
         this.props.dispatch({
             type: "changeFirstLayerSize",
+            // change all string values to numbers for future calculations
             firstLayerSize: Number(e.target.value)
         })
     }

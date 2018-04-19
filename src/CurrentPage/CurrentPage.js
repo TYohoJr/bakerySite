@@ -6,6 +6,7 @@ class CurrentPage extends React.Component {
     render() {
         return (
             <div>
+                {/* Simply grab the state of the current page from Redux */}
                 {this.props.setPageReducer.currentPage}
             </div>
         )

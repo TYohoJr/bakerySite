@@ -305,37 +305,37 @@ class OrderForm extends React.Component {
         })
     }
 
-    pickCookieStyle(e){
+    pickCookieStyle(e) {
         this.props.dispatch({
-            type:'changeCookieStyle',
+            type: 'changeCookieStyle',
             cookieStyle: e.target.value
         })
     }
 
-    pickCookieAmount(e){
+    pickCookieAmount(e) {
         this.props.dispatch({
-            type:'changeCookieAmount',
+            type: 'changeCookieAmount',
             cookieAmount: e.target.value
         })
     }
 
-    pickCupcakeStyle(e){
+    pickCupcakeStyle(e) {
         this.props.dispatch({
-            type:'changeCupcakeStyle',
+            type: 'changeCupcakeStyle',
             cupcakeStyle: e.target.value
         })
     }
 
-    pickCupcakeAmount(e){
+    pickCupcakeAmount(e) {
         this.props.dispatch({
-            type:'changeCupcakeAmount',
+            type: 'changeCupcakeAmount',
             cupcakeAmount: e.target.value
         })
     }
 
     pickNoSide() {
         this.props.dispatch({
-            type:'changeNoSide'
+            type: 'changeNoSide'
         })
         this.setState({
             newSideForm: '',

@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import LandingPage from './LandingPage/LandingPage';
 import React from "react";
 
+// Change the component that is the current tab being displayed
 const activePageReducer = (state, action) => {
     if (!state) {
         state = {
@@ -20,6 +21,7 @@ const activePageReducer = (state, action) => {
     }
 }
 
+// Details about the cake in the order form
 const orderCakeReducer = (state, action) => {
     if (!state) {
         state = {
@@ -87,6 +89,7 @@ const orderCakeReducer = (state, action) => {
         case "changeCookieStyle":
             return state = {
                 ...state,
+                // If they change from cookie to cupcake or vice versa, change the other option to blank string
                 cupcakeStyle: '',
                 cupcakeAmount: '',
                 cookieStyle: action.cookieStyle
@@ -127,6 +130,7 @@ const orderCakeReducer = (state, action) => {
     }
 }
 
+// Details about the customer in the order form
 const orderFormReducer = (state, action) => {
     if (!state) {
         state = {
@@ -194,6 +198,7 @@ const orderFormReducer = (state, action) => {
     }
 }
 
+// Info about the sizes of layers in the servings modal on the pricing page
 const layerSizeReducer = (state, action) => {
     if (!state) {
         state = {
@@ -238,6 +243,7 @@ const layerSizeReducer = (state, action) => {
     }
 }
 
+// Navbar open/close toggler
 const navbarReducer = (state, action) => {
     if (!state) {
         state = {
@@ -256,6 +262,7 @@ const navbarReducer = (state, action) => {
     }
 }
 
+// Set the state of the component currently being displayed in the CurrentPage component
 const setPageReducer = (state, action) => {
     if (!state) {
         state = {
@@ -274,6 +281,7 @@ const setPageReducer = (state, action) => {
     }
 }
 
+// State of the text inside the inout box for the total cake size on the pricing page
 const cakeSizeReducer = (state, action) => {
     if (!state) {
         state = {
@@ -299,6 +307,7 @@ const cakeSizeReducer = (state, action) => {
     }
 }
 
+// State of all the info in the pricing form
 const pricingFormReducer = (state, action) => {
     if (!state) {
         state = {
@@ -389,6 +398,7 @@ const pricingFormReducer = (state, action) => {
     }
 }
 
+// State of the result of the total estimate from the pricing form
 const calculateEstimateReducer = (state, action) => {
     if (!state) {
         state = {

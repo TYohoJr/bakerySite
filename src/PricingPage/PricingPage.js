@@ -8,6 +8,7 @@ class PricingPage extends React.Component {
         return (
             <div>
                 <div>
+                    {/* This is its own component to duture proof for additional content to this tab */}
                     <PricingForm />
                 </div>
             </div>

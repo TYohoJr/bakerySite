@@ -47,7 +47,7 @@ class PayPal extends React.Component {
         const client = {
             sandbox: 'AVBPOvA6ZCJ_fm8f7b4vFj1yHzU5OxacQBv3wG2ga2IzIuW0WSfx54UH-S2dOnjNHwRBuBjqR5P4lpUN',
             production: 'AcVg1-MRDoREcvwU5gA5_bJhqEK8ybezDG9MBtKfuA3ocrNDP3wnZLCwn4n3MWSB7ZoYzUxR-5WFTtY0',
-        }	
+        }
         return (
             <PaypalExpressBtn env={env} client={client} currency={currency} total={total} onError={onError} onSuccess={onSuccess} onCancel={onCancel} />
         );

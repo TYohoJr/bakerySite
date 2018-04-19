@@ -16,13 +16,16 @@ export default class App extends Component {
       <Provider store={store} >
         <div id="app-header">
           <div className="header-component">
+            {/* Header at top of page */}
             <Header />
           </div>
           <div className="App">
             <div className="navigation-component">
+              {/* Red navbar with tabs */}
               <Navigation />
             </div>
             <div className="currentpage-component">
+              {/* Whatever the current page is set to */}
               <CurrentPage />
             </div>
           </div>

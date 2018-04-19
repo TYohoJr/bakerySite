@@ -7,7 +7,9 @@ class DirectionsPage extends React.Component {
     render() {
         return (
             <div>
-                <Directions/>
+                {/* Display the Directions component */}
+                {/* This is it's own component simply for future proofing of adding more content to this tab */}
+                <Directions />
             </div>
         )
     }

@@ -28,10 +28,10 @@ class OrderLookup extends React.Component {
             if (result.data) {
                 let cookieInfo = 'none';
                 let cupcakeInfo = 'none';
-                if(result.data.cookie_style) {
+                if (result.data.cookie_style) {
                     cookieInfo = `${result.data.cookie_amount} of: ${result.data.cookie_style}`
                 }
-                if(result.data.cupcake_style) {
+                if (result.data.cupcake_style) {
                     cupcakeInfo = `${result.data.cupcake_amount} of: ${result.data.cupcake_style}`
                 }
                 this.setState({

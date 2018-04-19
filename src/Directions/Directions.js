@@ -3,6 +3,7 @@ import "./Directions.css";
 import { connect } from "react-redux";
 import { Button } from "reactstrap";
 
+// Make sure google is defined
 const google = window.google;
 
 class Directions extends React.Component {
@@ -22,11 +23,12 @@ class Directions extends React.Component {
             zoom: 10,
             center: myLatLng
         });
+        // Google maps api uses the marker simply by delcaring it. React doesn't like that...
         // eslint-disable-next-line
         var marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
-            title: 'Hello World!'
+            title: 'The Cake Lady'
         });
     }
 
@@ -46,11 +48,13 @@ class Directions extends React.Component {
     }
 
     calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        // Run route functions
         directionsService.route({
             origin: this.state.start,
             destination: { lat: 41.729716, lng: -88.125040 },
             travelMode: 'DRIVING'
         }, function (response, status) {
+            // Make sure the service didn't fail
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
             } else {
