@@ -191,6 +191,7 @@ class OrderForm extends React.Component {
                         <option>Lemon</option>
                         <option>Strawberry</option>
                         <option>Buttercream</option>
+                        <option>Other/Multiple</option>
                     </Input>
                 </FormGroup>
             </div>
@@ -280,7 +281,7 @@ class OrderForm extends React.Component {
                     <Label for="flavor">Cupcakes Style</Label>
                     <Input type="select" name="side" id="side" onChange={this.pickCupcakeStyle}>
                         <option>Select:</option>
-                        <option>1 - Bouqet</option>
+                        <option>1 - Bouquet</option>
                         <option>2 - Event</option>
                         <option>3 - Fancy</option>
                         <option>8 - Garden</option>
@@ -454,13 +455,13 @@ class OrderForm extends React.Component {
                         <CakeModal />
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="frosting" onChange={this.onFrostingChange} />{' '}
+                                <Input type="radio" name="frosting" onClick={this.onFrostingChange} />{' '}
                                 Frosting
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="frosting" onChange={this.onFondantChange} />{' '}
+                                <Input type="radio" name="frosting" onClick={this.onFondantChange} />{' '}
                                 Fondant
                             </Label>
                         </FormGroup>
@@ -470,13 +471,13 @@ class OrderForm extends React.Component {
                         <Label for="side">Cookies & Cupcakes (Optional)</Label>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="side" onChange={this.pickNoSide} />{' '}
+                                <Input type="radio" name="side" onClick={this.pickNoSide} />{' '}
                                 None
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="side" onChange={this.pickCookie} />{' '}
+                                <Input type="radio" name="side" onClick={this.pickCookie} />{' '}
                                 Cookies
                             </Label>
                         </FormGroup>
@@ -522,7 +523,7 @@ class OrderForm extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleText">Additional Comments:</Label>
-                        <p><small>Tell me more details about the cake you want! Theme, colors etc.</small></p>
+                        <p><small>Tell me more details about the cake you want! Theme, colors etc.<br/>Please also explain all "Other/Multiple" choices</small></p>
                         <Input type="textarea" maxLength="500" onChange={this.onTextChange} name="text" id="exampleText" />
                         <small>{this.state.text.length}/500</small>
                     </FormGroup>

@@ -107,6 +107,9 @@ class PricingForm extends React.Component {
             case "Strawberry":
                 frosting = 10
                 break;
+            case "Other/Multiple":
+                frosting = 10
+                break;
             case "Simple":
                 frosting = 25
                 break;
@@ -178,6 +181,7 @@ class PricingForm extends React.Component {
                         <option>Lemon</option>
                         <option>Strawberry</option>
                         <option>Buttercream</option>
+                        <option>Other/Multiple</option>
                     </Input>
                 </FormGroup>
             </div>
@@ -253,7 +257,6 @@ class PricingForm extends React.Component {
     }
 
     pickCookie() {
-        console.log("pick cookie ran")
         this.setState({
             newSideForm: <div>
                 <FormGroup>
@@ -287,14 +290,13 @@ class PricingForm extends React.Component {
     }
 
     pickCupcake() {
-        console.log("pick cupcake ran")
         this.setState({
             newSideForm: <div>
                 <FormGroup>
                     <Label for="flavor">Cupcakes Style</Label>
                     <Input type="select" name="side" id="side" onChange={this.pickCupcakeStyle}>
                         <option>Select:</option>
-                        <option>1 - Bouqet</option>
+                        <option>1 - Bouquet</option>
                         <option>2 - Event</option>
                         <option>3 - Fancy</option>
                         <option>8 - Garden</option>
@@ -358,6 +360,7 @@ class PricingForm extends React.Component {
     }
 
     render() {
+        console.log(this.props.pricingFormReducer)
         return (
             <div>
                 <Form id="pricing-form">
@@ -383,13 +386,13 @@ class PricingForm extends React.Component {
                         <CakeModal />
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="frosting" onChange={this.pickFrosting} />{' '}
+                                <Input type="radio" name="frosting" onClick={this.pickFrosting} />{' '}
                                 Frosting
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="frosting" onChange={this.pickFondant} />{' '}
+                                <Input type="radio" name="frosting" onClick={this.pickFondant} />{' '}
                                 Fondant
                             </Label>
                         </FormGroup>
@@ -399,19 +402,19 @@ class PricingForm extends React.Component {
                         <Label for="side">Cookies & Cupcakes (Optional)</Label>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="side" onChange={this.pickNoSide} />{' '}
+                                <Input type="radio" name="side" onClick={this.pickNoSide} />{' '}
                                 None
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="side" onChange={this.pickCookie} />{' '}
+                                <Input type="radio" name="side" onClick={this.pickCookie} />{' '}
                                 Cookies
                             </Label>
                         </FormGroup>
                         <FormGroup check>
                             <Label check>
-                                <Input type="radio" name="side" onChange={this.pickCupcake} />{' '}
+                                <Input type="radio" name="side" onClick={this.pickCupcake} />{' '}
                                 Cupcakes
                             </Label>
                         </FormGroup>
