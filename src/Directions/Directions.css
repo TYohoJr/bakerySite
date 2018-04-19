@@ -1,5 +1,5 @@
 .start-input {
-    margin: 20px;
+    margin-bottom: 20px;
 }
 
 #panel {
@@ -26,4 +26,9 @@
     height:500px;
     width: 500px;
     margin-top: 20px;
+}
+
+#directions-header {
+    display: inline-block;
+    margin-left: 95px;
 }

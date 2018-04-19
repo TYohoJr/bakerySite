@@ -7,7 +7,7 @@ class CookiesCupcakes extends React.Component {
         return (
             <div>
                 <div>
-                    <h1>Cookies/Cupcakes Gallery</h1>
+                    <h1 className="page-header">Cookies/Cupcakes Gallery</h1>
                 </div>
                 <div>
                     <p><span className="cc-text-row-1">1 - Bouqet</span><span className="cc-text-row-1">2 - Event</span><span className="cc-text-row-1">3 - Fancy Flower</span></p>

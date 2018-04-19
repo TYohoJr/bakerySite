@@ -71,18 +71,20 @@ class Directions extends React.Component {
 
     render() {
         return (
-            <div id="directions-div">
-                <div id="map-form-and-map">
-                    <div className="map-form">
-                        <h3>Get Directions!</h3>
-                        <input className="start-input" type="text" value={this.state.start} onChange={this.onStartChange} placeholder="Starting Location" />
-                        <br />
-                        <Button className="submit-btn" onClick={this.initMap}>Get Directions!</Button>
+            <div>
+                <h3 id="directions-header" className="page-header">Get Directions!</h3>
+                <div id="directions-div">
+                    <div id="map-form-and-map">
+                        <div className="map-form">
+                            <input className="start-input" type="text" value={this.state.start} onChange={this.onStartChange} placeholder="Starting Location" />
+                            <br />
+                            <Button className="submit-btn" onClick={this.initMap}>Get Directions!</Button>
+                        </div>
+                        <div id="map">
+                        </div>
                     </div>
-                    <div id="map">
-                    </div>
+                    <div id="panel" />
                 </div>
-                <div id="panel" />
             </div>
         )
     }

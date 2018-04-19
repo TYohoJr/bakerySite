@@ -7,7 +7,7 @@ class Examples extends React.Component {
         return (
             <div>
                 <div>
-                    <h1>Cake Gallery</h1>
+                    <h1 className="page-header">Cake Gallery</h1>
                 </div>
                 <div>
                     <div>
