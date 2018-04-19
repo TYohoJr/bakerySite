@@ -22,7 +22,7 @@ class LandingPage extends React.Component {
                 </div>
                 <div id="landing-page-info">
                     <img className="landing-page-laura" src={require("../images/laura-yoho.jpg")} alt="laura yoho" />
-                    <p>test</p>
+                    <p id="about-me-text">Hi!  My name is Laura Yoho.  Baking is my passion!<br/>I have been making cakes and desserts for over 25 years.<br/>I work closely with all my clients to make sure I deliver a creation that exceeds expectations, paying attention to every detail.</p>
                 </div>
             </div>
         )

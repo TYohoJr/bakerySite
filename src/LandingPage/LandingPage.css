@@ -18,3 +18,10 @@
 .landing-page-laura {
     height: 300px;
 }
+
+#about-me-text {
+    line-height: 60px;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
