@@ -468,7 +468,8 @@ class OrderForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <Label for="side">Cookies & Cupcakes (Optional)</Label>
+                        <h5>Add Cookies/Cupcakes to your order!</h5>
+                        <Label for="side">Cookies & Cupcakes</Label>
                         <FormGroup check>
                             <Label check>
                                 <Input type="radio" name="side" onClick={this.pickNoSide} />{' '}
@@ -523,7 +524,7 @@ class OrderForm extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleText">Additional Comments:</Label>
-                        <p><small>Tell me more details about the cake you want! Theme, colors etc.<br/>Please also explain all "Other/Multiple" choices</small></p>
+                        <p><small>Tell me more details about the cake you want! Theme, colors etc.<br />Please also explain all "Other/Multiple" choices</small></p>
                         <Input type="textarea" maxLength="500" onChange={this.onTextChange} name="text" id="exampleText" />
                         <small>{this.state.text.length}/500</small>
                     </FormGroup>
