@@ -18,14 +18,14 @@ class Directions extends React.Component {
     }
 
     componentDidMount() {
-        var myLatLng = { lat: 41.729716, lng: -88.125040 }
-        var map = new google.maps.Map(document.getElementById('map'), {
+        let myLatLng = { lat: 41.729716, lng: -88.125040 }
+        let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: myLatLng
         });
         // Google maps api uses the marker simply by delcaring it. React doesn't like that...
         // eslint-disable-next-line
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
             position: myLatLng,
             map: map,
             title: 'The Cake Lady'
@@ -34,11 +34,11 @@ class Directions extends React.Component {
 
     initMap() {
         document.getElementById("panel").innerHTML = '';
-        var directionsService = new google.maps.DirectionsService();
-        var directionsDisplay = new google.maps.DirectionsRenderer({
+        let directionsService = new google.maps.DirectionsService();
+        let directionsDisplay = new google.maps.DirectionsRenderer({
             panel: document.getElementById("panel")
         });
-        var map = new google.maps.Map(document.getElementById('map'), {
+        let map = new google.maps.Map(document.getElementById('map'), {
             zoom: 7,
             center: { lat: 41.729716, lng: -88.125040 }
         });
