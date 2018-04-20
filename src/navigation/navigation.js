@@ -95,7 +95,7 @@ class Navigation extends React.Component {
                   <Button className="navbar-buttons" onClick={this.setCookiesCupcakes}>Cookies/Cupcakes</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
-                  <Button className="navbar-buttons" onClick={this.setPricingPage}>Pricing</Button>
+                  <Button className="navbar-buttons" onClick={this.setPricingPage}>Price Estimator</Button>
                 </NavItem>
                 <NavItem className="navbar-navitem">
                   <Button className="navbar-buttons" onClick={this.setOrderPage}>Order</Button>
