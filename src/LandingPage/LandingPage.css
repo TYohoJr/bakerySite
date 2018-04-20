@@ -4,8 +4,8 @@
 }
 
 .landing-page-pic {
-    max-height:180px;
-    width:130px;
+    max-height:270px;
+    /* width:200px; */
     margin:20px;
 }
 
@@ -24,4 +24,8 @@
     font-family: cursive;
     font-weight: bold;
     font-size: 20px;
+}
+
+#landing-page-second-pic {
+    margin-right: -200px;
 }
