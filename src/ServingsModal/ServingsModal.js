@@ -36,6 +36,11 @@ class ServingsModal extends React.Component {
     }
 
     toggle() {
+        if (!this.state.modal) {
+            this.props.dispatch({
+                type: "resetTotal"
+            })
+        }
         this.setState({
             modal: !this.state.modal
         });
@@ -81,7 +86,7 @@ class ServingsModal extends React.Component {
                         <FormGroup tag="fieldset">
                             <FormGroup>
                                 <Label for="layers">Diameter of 1st layer (inches)</Label>
-                                <Input required type="select" name="layer1" id="layers" onChange={this.onFirstLayerChange} multiple>
+                                <Input required type="select" name="layer1" id="layers" onClick={this.onFirstLayerChange} multiple>
                                     <option>4</option>
                                     <option>6</option>
                                     <option>8</option>
@@ -89,7 +94,7 @@ class ServingsModal extends React.Component {
                                     <option>12</option>
                                 </Input>
                                 <Label for="layers">Diameter of 2nd layer (inches)</Label>
-                                <Input type="select" name="layer2" id="layers" onChange={this.onSecondLayerChange} multiple>
+                                <Input type="select" name="layer2" id="layers" onClick={this.onSecondLayerChange} multiple>
                                     <option>N/A</option>
                                     <option>4</option>
                                     <option>6</option>
@@ -98,7 +103,7 @@ class ServingsModal extends React.Component {
                                     <option>12</option>
                                 </Input>
                                 <Label for="layers">Diameter of 3rd layer (inches)</Label>
-                                <Input type="select" name="layer3" id="layers" onChange={this.onThirdLayerChange} multiple>
+                                <Input type="select" name="layer3" id="layers" onClick={this.onThirdLayerChange} multiple>
                                     <option>N/A</option>
                                     <option>4</option>
                                     <option>6</option>
@@ -107,7 +112,7 @@ class ServingsModal extends React.Component {
                                     <option>12</option>
                                 </Input>
                                 <Label for="layers">Diameter of 4th layer (inches)</Label>
-                                <Input type="select" name="layer4" id="layers" onChange={this.onFourthLayerChange} multiple>
+                                <Input type="select" name="layer4" id="layers" onClick={this.onFourthLayerChange} multiple>
                                     <option>N/A</option>
                                     <option>4</option>
                                     <option>6</option>
