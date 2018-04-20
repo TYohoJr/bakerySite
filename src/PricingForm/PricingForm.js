@@ -360,7 +360,6 @@ class PricingForm extends React.Component {
     }
 
     render() {
-        console.log(this.props.pricingFormReducer)
         return (
             <div>
                 <Form id="pricing-form">

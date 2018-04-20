@@ -352,11 +352,11 @@ class OrderForm extends React.Component {
                     <h2 className="order-header">Your Info</h2>
                     <FormGroup>
                         <Label for="name">Name</Label>
-                        <Input type="text" name="name" id="name" maxlength="30" onChange={this.onUserNameChange} placeholder="John Smith" />
+                        <Input type="text" name="name" id="name" maxLength="30" onChange={this.onUserNameChange} placeholder="John Smith" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="exampleEmail">Email</Label>
-                        <Input type="email" name="email" id="exampleEmail" maxlength="30" onChange={this.onEmailChange} placeholder="example@email.com" />
+                        <Input type="email" name="email" id="exampleEmail" maxLength="30" onChange={this.onEmailChange} placeholder="example@email.com" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="number">Phone Number</Label>
@@ -379,10 +379,10 @@ class OrderForm extends React.Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="address">Address</Label>
-                        <Input type="text" name="address-street" maxlength="50" placeholder="street address" onChange={this.onAddressStreetChange} />
-                        <Input type="text" name="address-city" maxlength="30" placeholder="city" onChange={this.onAddressCityChange} />
-                        <Input type="text" name="address-state" maxlength="2" placeholder="state" onChange={this.onAddressStateChange} />
-                        <Input type="text" name="address-zip" maxlength="5" placeholder="zip code" onChange={this.onAddressZipChange} />
+                        <Input type="text" name="address-street" maxLength="50" placeholder="street address" onChange={this.onAddressStreetChange} />
+                        <Input type="text" name="address-city" maxLength="30" placeholder="city" onChange={this.onAddressCityChange} />
+                        <Input type="text" name="address-state" maxLength="2" placeholder="state" onChange={this.onAddressStateChange} />
+                        <Input type="text" name="address-zip" maxLength="5" placeholder="zip code" onChange={this.onAddressZipChange} />
                     </FormGroup>
                     <FormGroup>
                         <Label for="date">Date Needed</Label>
