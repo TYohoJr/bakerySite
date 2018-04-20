@@ -15,8 +15,11 @@
 
 #header-title {
     width: 40%;
-    font-family: cursive;
-    font-weight: bolder;
+}
+
+#header-header {
+    font-weight: 900;
+    font-family: Harrington;
 }
 
 #header-address {
