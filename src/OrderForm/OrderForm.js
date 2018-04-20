@@ -468,7 +468,7 @@ class OrderForm extends React.Component {
                         {this.state.newForm}
                     </FormGroup>
                     <FormGroup tag="fieldset">
-                        <h5>Add Cookies/Cupcakes to your order!</h5>
+                        <h5>Add Cookies/Cupcakes to your cake order!</h5>
                         <Label for="side">Cookies & Cupcakes</Label>
                         <FormGroup check>
                             <Label check>
