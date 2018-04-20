@@ -48,17 +48,17 @@ footer {
 }
 
 .main-btns {
-  background-color: #003366;
+  background-color: #00B2EE;
 
 }
 
 .main-btns:hover {
-  background-color: #002447;
+  background-color: rgb(2, 157, 209);
 
 }
 
 .main-btns:active {
-  background-color: #001931!important;
+  background-color: rgb(3, 132, 175)!important;
 
 }
 
