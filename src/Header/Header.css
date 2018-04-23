@@ -13,10 +13,6 @@
     margin-right: 5%;
 }
 
-#header-title {
-    width: 40%;
-}
-
 #header-header {
     font-size: 55px;
     font-weight: 900;
@@ -44,13 +40,20 @@
 
 .header-img {
     height:100px;
-}
-
-#header-imgs-div {
-    width: 900px;
+    max-width: 7vw;
 }
 
 #header-all-info {
     font-family: cursive;
     font-weight: bold;
+}
+
+#header-logo {
+    max-width: 50vw;
+    border-radius: 10px 10px;
+    border: 2px dotted pink
+}
+
+#header-imgs-div {
+    width: 40vw;
 }

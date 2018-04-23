@@ -3,6 +3,11 @@
     width: 50%;
 }
 
+#landing-page-info {
+    max-width: 50%;
+    float: right;
+}
+
 .landing-page-pic {
     max-height:270px;
     margin:20px;
@@ -16,6 +21,8 @@
 
 .landing-page-laura {
     height: 300px;
+    border-radius: 10px 10px;
+    border: 10px double grey
 }
 
 #about-me-text {

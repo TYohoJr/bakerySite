@@ -45,7 +45,7 @@ class OrderForm extends React.Component {
             newForm: '',
             // Inital state of checkout button to verify order before proceeding
             checkoutBtn: <div>
-                <Button className="submit-btn" onClick={this.verifyOrder}>Submit Order</Button>
+                <Button id="submit-btn-green" className="submit-btn" onClick={this.verifyOrder}>Submit Order</Button>
             </div>,
             newSideForm: '',
             newSideFormAmount: ''
