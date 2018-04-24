@@ -56,7 +56,6 @@ class PayPal extends React.Component {
 
 export default connect((state) => (state))(PayPal);
 
-
 /*
 Payment object on success
 
