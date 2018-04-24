@@ -14,7 +14,6 @@ class ServingsModal extends React.Component {
         this.calculateEstimatePrice = this.calculateEstimatePrice.bind(this);
         this.state = {
             modal: false,
-            layerWarning: ''
         };
 
         this.toggle = this.toggle.bind(this);
@@ -26,29 +25,17 @@ class ServingsModal extends React.Component {
         // Check to see if the sizes of the layers are in the correct order
         switch (true) {
             case (layerSizes.firstLayerSize < layerSizes.secondLayerSize):
-                return this.setState({
-                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
-                })
+                return alert("Layers must be arranged largest to smallest");
             case (layerSizes.firstLayerSize < layerSizes.thirdLayerSize):
-                return this.setState({
-                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
-                })
+                return alert("Layers must be arranged largest to smallest");
             case (layerSizes.firstLayerSize < layerSizes.fourthLayerSize):
-                return this.setState({
-                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
-                })
+                return alert("Layers must be arranged largest to smallest");
             case (layerSizes.secondLayerSize < layerSizes.thirdLayerSize):
-                return this.setState({
-                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
-                })
+                return alert("Layers must be arranged largest to smallest");
             case (layerSizes.secondLayerSize < layerSizes.fourthLayerSize):
-                return this.setState({
-                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
-                })
+                return alert("Layers must be arranged largest to smallest");
             case (layerSizes.thirdLayerSize < layerSizes.fourthLayerSize):
-                return this.setState({
-                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
-                })
+                return alert("Layers must be arranged largest to smallest");
             default:
                 break;
         }
@@ -60,10 +47,6 @@ class ServingsModal extends React.Component {
             type: "totalCakeSize",
             totalCakeSize: total,
             totalCakeHeight: totalHeight
-        })
-        // Reset the warning message upon success
-        this.setState({
-            layerWarning:''
         })
         // Toggle modal after dispatching
         this.toggle()
@@ -118,7 +101,6 @@ class ServingsModal extends React.Component {
                     <ModalHeader toggle={this.toggle}>Servings Guide<br />(Each layer is 4 inches tall)</ModalHeader>
                     <ModalBody>
                         <img src={require("../images/servings-guide.jpg")} alt="servings guide" />
-                        {this.state.layerWarning}
                         <FormGroup tag="fieldset">
                             <FormGroup>
                                 <Label for="layers">Diameter of 1st layer (inches)</Label>
