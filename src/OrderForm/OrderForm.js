@@ -56,6 +56,25 @@ class OrderForm extends React.Component {
         // Make data structure more understandable
         let orderInfo = this.props.orderFormReducer;
         let orderDetails = this.props.orderCakeReducer;
+        // Change the first layer from a string to a number for computation
+        orderDetails.layerOneSize = Number(orderDetails.layerOneSize);
+        // Check to see if the sizes of the layers are in the correct order
+        switch (true) {
+            case (orderDetails.layerOneSize < orderDetails.layerTwoSize):
+                return alert("Layers should be arranged largest to smallest");
+            case (orderDetails.layerOneSize < orderDetails.layerThreeSize):
+                return alert("Layers should be arranged largest to smallest");
+            case (orderDetails.layerOneSize < orderDetails.layerFourSize):
+                return alert("Layers should be arranged largest to smallest");
+            case (orderDetails.layerTwoSize < orderDetails.layerThreeSize):
+                return alert("Layers should be arranged largest to smallest");
+            case (orderDetails.layerTwoSize < orderDetails.layerFourSize):
+                return alert("Layers should be arranged largest to smallest");
+            case (orderDetails.layerThreeSize < orderDetails.layerFourSize):
+                return alert("Layers should be arranged largest to smallest");
+            default:
+                break;
+        }
         // Check if all required fields are populated
         if (orderInfo.email && orderInfo.username && orderInfo.addressCity && orderInfo.addressState && orderInfo.addressStreet && orderInfo.addressZip && orderInfo.number && orderInfo.dateNeeded && orderInfo.contact && orderDetails.flavor && orderDetails.frostingFondant && orderDetails.delivery && orderDetails.plates) {
             axios.post("/checkDuplicate", { email: this.props.orderFormReducer.email }).then((result) => {
@@ -148,28 +167,28 @@ class OrderForm extends React.Component {
     onLayerOneSizeChange(e) {
         this.props.dispatch({
             type: "changeLayerOneSize",
-            layerOneSize: e.target.value
+            layerOneSize: Number(e.target.value)
         })
     }
 
     onLayerTwoSizeChange(e) {
         this.props.dispatch({
             type: "changeLayerTwoSize",
-            layerTwoSize: e.target.value
+            layerTwoSize: Number(e.target.value)
         })
     }
 
     onLayerThreeSizeChange(e) {
         this.props.dispatch({
             type: "changeLayerThreeSize",
-            layerThreeSize: e.target.value
+            layerThreeSize: Number(e.target.value)
         })
     }
 
     onLayerFourSizeChange(e) {
         this.props.dispatch({
             type: "changeLayerFourSize",
-            layerFourSize: e.target.value
+            layerFourSize: Number(e.target.value)
         })
     }
 

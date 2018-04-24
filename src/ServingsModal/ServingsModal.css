@@ -6,3 +6,7 @@
     margin-bottom: 10px;
     margin-left: 10px;
 }
+
+#layers-warning-message {
+    color: rgb(255, 6, 6)
+}

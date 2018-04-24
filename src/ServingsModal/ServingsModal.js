@@ -14,6 +14,7 @@ class ServingsModal extends React.Component {
         this.calculateEstimatePrice = this.calculateEstimatePrice.bind(this);
         this.state = {
             modal: false,
+            layerWarning: ''
         };
 
         this.toggle = this.toggle.bind(this);
@@ -22,6 +23,35 @@ class ServingsModal extends React.Component {
     calculateEstimatePrice() {
         let totalHeight = 4;
         let layerSizes = this.props.layerSizeReducer;
+        // Check to see if the sizes of the layers are in the correct order
+        switch (true) {
+            case (layerSizes.firstLayerSize < layerSizes.secondLayerSize):
+                return this.setState({
+                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
+                })
+            case (layerSizes.firstLayerSize < layerSizes.thirdLayerSize):
+                return this.setState({
+                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
+                })
+            case (layerSizes.firstLayerSize < layerSizes.fourthLayerSize):
+                return this.setState({
+                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
+                })
+            case (layerSizes.secondLayerSize < layerSizes.thirdLayerSize):
+                return this.setState({
+                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
+                })
+            case (layerSizes.secondLayerSize < layerSizes.fourthLayerSize):
+                return this.setState({
+                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
+                })
+            case (layerSizes.thirdLayerSize < layerSizes.fourthLayerSize):
+                return this.setState({
+                    layerWarning: <h3 id="layers-warning-message">Layers should be arranged largest to smallest!</h3>
+                })
+            default:
+                break;
+        }
         if (layerSizes.secondLayerSize) totalHeight = totalHeight + 4
         if (layerSizes.thirdLayerSize) totalHeight = totalHeight + 4
         if (layerSizes.fourthLayerSize) totalHeight = totalHeight + 4
@@ -30,6 +60,10 @@ class ServingsModal extends React.Component {
             type: "totalCakeSize",
             totalCakeSize: total,
             totalCakeHeight: totalHeight
+        })
+        // Reset the warning message upon success
+        this.setState({
+            layerWarning:''
         })
         // Toggle modal after dispatching
         this.toggle()
@@ -76,6 +110,7 @@ class ServingsModal extends React.Component {
     }
 
     render() {
+        console.log(this.props.layerSizeReducer);
         return (
             <div>
                 <Button id="size-calculator-btn" className="main-btns" onClick={this.toggle}>Cake Size Calculator</Button>
@@ -83,6 +118,7 @@ class ServingsModal extends React.Component {
                     <ModalHeader toggle={this.toggle}>Servings Guide<br />(Each layer is 4 inches tall)</ModalHeader>
                     <ModalBody>
                         <img src={require("../images/servings-guide.jpg")} alt="servings guide" />
+                        {this.state.layerWarning}
                         <FormGroup tag="fieldset">
                             <FormGroup>
                                 <Label for="layers">Diameter of 1st layer (inches)</Label>
