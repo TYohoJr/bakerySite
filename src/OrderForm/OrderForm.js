@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import PayPal from "../PayPal/PayPal";
 import CakeModal from "../CakeModal/CakeModal";
-// import MapModal from "../MapModal/MapModal";
 import LayersGuideModal from "../LayersGuideModal/LayersGuideModal";
 import axios from "axios";
 
