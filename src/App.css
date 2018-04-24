@@ -44,32 +44,26 @@ footer {
 
 .modal-header {
   text-align: center;
-  
 }
 
 .main-btns {
   background-color: #00B2EE;
-
 }
 
 .main-btns:hover {
   background-color: rgb(2, 157, 209);
-
 }
 
 .main-btns:active {
   background-color: rgb(3, 132, 175)!important;
-
 }
 
 .submit-btn {
   background-color: #5C755E;
-
 }
 
 .submit-btn:hover {
   background-color: rgb(72, 94, 74);
-
 }
 
 .submit-btn:active {
