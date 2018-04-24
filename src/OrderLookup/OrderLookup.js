@@ -112,16 +112,16 @@ class OrderLookup extends React.Component {
     render() {
         return (
             <div>
-                <Button id="order-lookup-btn" className="main-btns" onClick={this.toggle}>Order Lookup</Button>
+                <Button id="order-lookup-btn" className="submit-btn" onClick={this.toggle}>Lookup Order</Button>
                 <Modal id="modal-test" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader className="lookup-modal-parts" toggle={this.toggle}>Order Lookup</ModalHeader>
+                    <ModalHeader className="lookup-modal-parts" toggle={this.toggle}>Lookup Order</ModalHeader>
                     <ModalBody className="lookup-modal-parts">
                         <input type="text" maxLength="30" onChange={this.onEmailLookupChange} placeholder="Enter your email" />
-                        <Button onClick={this.orderLookup}>Order Lookup</Button>
+                        <Button onClick={this.orderLookup}>Lookup</Button>
                         {this.state.orderTable}
                     </ModalBody>
                     <ModalFooter className="lookup-modal-parts">
-                        <Button color="secondary" onClick={this.toggle}>Done</Button>
+                        <Button className="reset-btn" onClick={this.toggle}>Close</Button>
                     </ModalFooter>
                 </Modal>
             </div>
