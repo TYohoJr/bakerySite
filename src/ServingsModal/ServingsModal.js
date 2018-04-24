@@ -22,20 +22,21 @@ class ServingsModal extends React.Component {
     calculateEstimatePrice() {
         let totalHeight = 4;
         let layerSizes = this.props.layerSizeReducer;
+        layerSizes.firstLayerSize = Number(layerSizes.firstLayerSize);
         // Check to see if the sizes of the layers are in the correct order
         switch (true) {
             case (layerSizes.firstLayerSize < layerSizes.secondLayerSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (layerSizes.firstLayerSize < layerSizes.thirdLayerSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (layerSizes.firstLayerSize < layerSizes.fourthLayerSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (layerSizes.secondLayerSize < layerSizes.thirdLayerSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (layerSizes.secondLayerSize < layerSizes.fourthLayerSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (layerSizes.thirdLayerSize < layerSizes.fourthLayerSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             default:
                 break;
         }

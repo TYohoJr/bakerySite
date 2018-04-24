@@ -61,17 +61,17 @@ class OrderForm extends React.Component {
         // Check to see if the sizes of the layers are in the correct order
         switch (true) {
             case (orderDetails.layerOneSize < orderDetails.layerTwoSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (orderDetails.layerOneSize < orderDetails.layerThreeSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (orderDetails.layerOneSize < orderDetails.layerFourSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (orderDetails.layerTwoSize < orderDetails.layerThreeSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (orderDetails.layerTwoSize < orderDetails.layerFourSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             case (orderDetails.layerThreeSize < orderDetails.layerFourSize):
-                return alert("Layers must be arranged largest to smallest");
+                return alert("Please arrange the layers largest to smallest");
             default:
                 break;
         }
