@@ -104,7 +104,7 @@ class ServingsModal extends React.Component {
                         <img src={require("../images/servings-guide.jpg")} alt="servings guide" />
                         <FormGroup tag="fieldset">
                             <FormGroup>
-                                <Label for="layers">Diameter of 1st layer (inches)</Label>
+                                <Label for="layers">Diameter of 1st layer (inches) <b>Largest Layer</b></Label>
                                 <Input required type="select" name="layer1" id="layers" onClick={this.onFirstLayerChange} multiple>
                                     <option>4</option>
                                     <option>6</option>

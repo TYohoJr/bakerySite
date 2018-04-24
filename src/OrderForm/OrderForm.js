@@ -415,7 +415,7 @@ class OrderForm extends React.Component {
                     <h5 className="label-float">Layer Sizes:</h5>
                     <LayersGuideModal />
                     <FormGroup>
-                        <Label for="layerOneSize">Layer 1 Size</Label>
+                        <Label for="layerOneSize">Layer 1 Size <b>Largest Layer</b></Label>
                         <Input type="select" name="layerOneSize" onChange={this.onLayerOneSizeChange}>
                             <option>4</option>
                             <option>6</option>
