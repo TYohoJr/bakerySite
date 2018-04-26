@@ -96,7 +96,7 @@ class OrderLookup extends React.Component {
                 })
             } else {
                 this.setState({
-                    orderTable: <p>No order associated with {this.state.emailLookup}</p>
+                    orderTable: <p>No order associated with: {this.state.emailLookup}</p>
                 })
             }
         })
@@ -114,7 +114,7 @@ class OrderLookup extends React.Component {
             <div>
                 <Button id="order-lookup-btn" className="main-btns" onClick={this.toggle}>Lookup Order</Button>
                 <Modal id="modal-test" isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader className="lookup-modal-parts" toggle={this.toggle}>Lookup Order</ModalHeader>
+                    <ModalHeader className="lookup-modal-parts">Lookup Order</ModalHeader>
                     <ModalBody className="lookup-modal-parts">
                         <input type="text" maxLength="30" onChange={this.onEmailLookupChange} placeholder="Enter your email" />
                         <Button className="submit-btn" onClick={this.orderLookup}>Lookup Order</Button>
