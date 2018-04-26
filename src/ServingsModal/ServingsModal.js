@@ -94,7 +94,6 @@ class ServingsModal extends React.Component {
     }
 
     render() {
-        console.log(this.props.layerSizeReducer);
         return (
             <div>
                 <Button id="size-calculator-btn" className="main-btns" onClick={this.toggle}>Cake Size Calculator</Button>

@@ -80,7 +80,6 @@ class OrderForm extends React.Component {
                 if (result.data.duplicateCheck) {
                     alert(result.data.message);
                 } else {
-                    console.log(result)
                     // If verify is successful change button to the payapl checkout button
                     this.setState({
                         checkoutBtn: <div>
