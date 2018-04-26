@@ -44,9 +44,9 @@ class PricingForm extends React.Component {
         let flavor = null;
         let frosting = null;
         let plates = null;
-        let cakeSize = this.props.cakeSizeReducer.totalCakeSize
+        let cakeSize = this.props.cakeSizeReducer.totalCakeHeight
         let cakeDetails = this.props.pricingFormReducer
-        if (!cakeSize) {
+        if (typeof cakeSize !== "number") {
             this.props.dispatch({
                 type: "calculateEstimateTotal",
                 estimateTotal: "Please select cake size"
