@@ -39,6 +39,9 @@ class Examples extends React.Component {
                         <img className="examples-img" src={require("../cake-images/treasure-chest.jpg")} alt="cake" />
                         <img className="examples-img" src={require("../cake-images/pokemon.jpg")} alt="cake" />
                     </div>
+                    <div>
+                        <img className="examples-img" src={require("../cake-images/zelda.jpg")} alt="cake" />
+                    </div>
                 </div>
             </div>
         )
