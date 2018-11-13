@@ -40,10 +40,10 @@ class OrderLookup extends React.Component {
                             <Table id="lookup-table">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>Name{console.log(result.data)}</th>
                                         <th>Location</th>
                                         <th>Email</th>
-                                        <th>Preffered Contact</th>
+                                        <th>Order Number</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -51,7 +51,7 @@ class OrderLookup extends React.Component {
                                         <td>{result.data.name}</td>
                                         <td>{result.data.address_city}, {result.data.address_state}</td>
                                         <td>{result.data.email}</td>
-                                        <td>{result.data.contact}</td>
+                                        <td>{result.data.id}</td>
                                     </tr>
                                     <tr>
                                         <th>Layer 1 (diameter in inches)</th>
